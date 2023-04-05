@@ -34,5 +34,4 @@
         android:layout_below="@id/requestResultsInstruc"
         android:layout_margin="20dp"
         android:background="#70576CBC"/>
-
 </RelativeLayout>

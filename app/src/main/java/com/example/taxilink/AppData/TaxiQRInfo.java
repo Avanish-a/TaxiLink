@@ -10,7 +10,7 @@ public class TaxiQRInfo {
         QRtoID.put(qr, taxiID);
     }
 
-    private String getID(String qr) {
+    public String getID(String qr) {
         return QRtoID.get(qr);
     }
 
