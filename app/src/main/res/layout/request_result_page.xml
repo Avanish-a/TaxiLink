@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pageBackground">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/requestResultsHeader"
+        android:text="Available Links"
+        android:textSize="35dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_margin="50dp"
+        android:textAlignment="center"
+        />
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/requestResultsInstruc"
+        android:text="Select which Link you would like to join:"
+        android:textSize="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/requestResultsHeader"
+        android:textColor="@color/white"
+        android:textAlignment="center"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/requestResults"
+        android:layout_below="@id/requestResultsInstruc"
+        android:layout_margin="20dp"
+        android:background="#70576CBC"/>
+</RelativeLayout>
