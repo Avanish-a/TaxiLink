@@ -2,196 +2,97 @@ package com.example.taxilink.EncryptionController.RSAEncryption;
 
 import com.example.taxilink.EncryptionController.DataEncryption;
 
-import java.io.IOException;
-import java.math.BigInteger;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
-import static java.nio.file.Files.readAllLines;
-import static java.nio.file.Files.walkFileTree;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class RSA implements DataEncryption {
-    private BigInteger prvKey;
-    private BigInteger pubKey;
-    private final Path keyFile = Paths.get("com/example/taxilink/EncryptionController/RSAEncryption/primes.txt");
+    private long prvKey;
+    private long pubKey;
+    private long n;
+    private final long[] primes = {101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997, 1009, 1021};
+
+    public RSA() {
+        generateKeys();
+    }
+
 
     @Override
-    public ArrayList<String> encrypt(ArrayList<String> data) {
-        return null;
+    public String encrypt(String data) {
+        StringBuilder enMessage = new StringBuilder();
+        for (int i = 0; i < data.length(); i++) {
+            long encryptedChar = 1;
+            int currChar = data.charAt(i);
+            for (long j = pubKey; j > 0; j--) {
+                encryptedChar *= currChar;
+                encryptedChar %= n;
+            }
+            enMessage.append(encryptedChar).append("O");
+        }
+
+        return enMessage.substring(0, enMessage.length());
     }
+
 
     @Override
-    public ArrayList<String> decrypt(ArrayList<String> data) {
-        return null;
+    public String decrypt(String data) {
+        String[] chars = data.split("O");
+        long[] letters = new long[chars.length];
+        for (int i = 0; i < chars.length; i++) {
+            letters[i] = Long.parseLong(chars[i]);
+        }
+
+        StringBuilder deMessage = new StringBuilder();
+        for (long letter : letters) {
+            long decryptChar = 1;
+            for (long j = prvKey; j > 0; j--) {
+                decryptChar *= letter;
+                decryptChar %= n;
+            }
+            deMessage.append((char) decryptChar);
+        }
+
+        return deMessage.toString();
     }
 
-    private ArrayList<String> formatData(String data) {
-        return null;
-    }
 
-    private void generateKeys() throws IOException {
-        long f_len = Files.lines(keyFile).count();
-        List<String> primes = readAllLines(keyFile);
+    private void generateKeys() {
         int l1, l2;
-        BigInteger prime1, prime2;
-        l1 = randInt(0, (int) f_len);
+        long prime1, prime2;
+        l1 = randInt(primes.length);
         do {
-            l2 = randInt(0, (int) f_len);
+            l2 = randInt(primes.length);
         }
         while (l2 == l1);
-        prime1 = new BigInteger(primes.get(l1));
-        prime2 = new BigInteger(primes.get(l2));
+        prime1 = primes[l1];
+        prime2 = primes[l2];
 
-        BigInteger n = prime1.multiply(prime2);
-        BigInteger fi = (prime1.subtract(BigInteger.valueOf(1))).multiply(prime2.subtract(BigInteger.valueOf(1)));
+        n = prime1 * (prime2);
+        long fi = (prime1 - 1) * (prime2 - 1);
         long e = 2;
         long d = 2;
-        while (!fi.gcd(BigInteger.valueOf(e)).equals(BigInteger.valueOf(1))) {
+
+        while (!(gcd(e, fi) == 1)) {
             e++;
         }
-        pubKey = BigInteger.valueOf(e);
-        while (!(fi.mod(BigInteger.valueOf(d * e))).equals(BigInteger.valueOf(1))) {
+        pubKey = e;
+
+        while (!((d * e) % fi == 1)) {
             d++;
         }
-        prvKey = BigInteger.valueOf(d);
+        prvKey = d;
     }
 
-    private int randInt(int min, int max) {
-        return ThreadLocalRandom.current().nextInt(min, (max + 1));
+
+    private int randInt(int max) {
+        return ThreadLocalRandom.current().nextInt(0, max);
     }
 
+    private long gcd(long a, long b) {
+        while (true) {
+            if (a % b == 0)
+                return b;
+            long t = b;
+            b = a % b;
+            a = t;
+        }
+    }
 }
-
-class Encoder {
-    private:
-    vector<int> prime;
-    int pub;
-    int prv;
-    int n;
-
-    void sieve_primes();
-
-    void keys();
-
-    int choose();
-
-    vector<ll> rsa(const string &message);
-
-    public:
-
-    vector<string> encrypted(const vector<string> &info);
-};
-
-void Encoder::sieve_primes(){
-        ll num_primes=50000;
-        vector<bool> sieve(num_primes,true);
-        sieve[0]=false;
-        sieve[1]=false;
-        int p=2;
-        while(p*p<=num_primes){
-        if(sieve[p]){
-        for(int i=p*p;i<=num_primes;i+=p){
-        sieve[i]=false;
-        }
-        }
-        p+=1;
-        }
-        for(int i=0;i<sieve.size();i++){
-        if(sieve[i])
-        prime.push_back(i);
-        }
-        }
-
-        int Encoder::choose(){
-        srand(time(nullptr));
-        auto k=rand()%prime.size();
-        auto it=prime.begin();
-        while(k--)
-        it++;
-        int ret=*it;
-        prime.erase(it);
-        return ret;
-        }
-
-        void Encoder::keys(){
-        int prime1=choose(); // first prime number
-        int prime2=choose(); // second prime number
-        n=prime1*prime2;
-        int fi=(prime1-1)*(prime2-1);
-        int e=2;
-        while(true){
-        if(__gcd(e,fi)==1)
-        break;
-        e++;
-        } // d = (k*Φ(n) + 1) / e for some integer k
-        pub=e;
-        int d=2;
-        while(true){
-        if((d*e)%fi==1)
-        break;
-        d++;
-        }
-        prv=d;
-        }
-
-
-// first converting each character to its ASCII value and
-// then encoding it then decoding the number to get the
-// ASCII and converting it to character
-        vector<ll> Encoder::rsa(const string&message){
-        vector<ll> form;
-        // calling the encrypting function in encoding function
-        for(auto&letter:message){
-        int e=pub;
-        ll encrypted_text=1;
-        while(e--){
-        encrypted_text*=(ll)letter;
-        encrypted_text%=n;
-        }
-        form.push_back(encrypted_text);
-        }
-        return form;
-        }
-
-
-        vector<string> Encoder::encrypted(const vector<string> &info){
-        sieve_primes();
-        keys();
-        vector<string> text;
-        vector<vector<ll>>en;
-        for(const auto&i:info){
-        vector<ll> coded=rsa(i);
-        en.push_back(coded);
-        string x_str;
-        for(auto&p:coded)
-        x_str+=to_string(p);
-        cout<<x_str<<"\n\n";
-        text.push_back(x_str);
-        }
-        text.push_back(to_string(prv));
-        cout<<prv<<endl;
-        return text;
-        }
-
-        ll decrypt(int encrypted_text){
-        int d=prv;
-        ll decrypted=1;
-        while(d--){
-        decrypted*=encrypted_text;
-        decrypted%=n;
-        }
-        return decrypted;
-        }
-
-        string decoder(const vector<int>&encoded){
-        string s;
-        // calling the decrypting function decoding function
-        for(auto&num:encoded)
-        s+=decrypt(num);
-        return s;
-        }
