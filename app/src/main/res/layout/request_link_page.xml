@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pageBackground">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/requestLinkHeader"
+        android:text="Request Link"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:layout_margin="50dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/destinationHeader"
+        android:text="Taxi Destination:"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:layout_margin="10dp"
+        android:layout_below="@id/requestLinkHeader"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/requestDestinationInput"
+        android:hint="Destination Address"
+        android:layout_below="@id/destinationHeader"
+        android:background="#30ffffff"
+        android:textColorHint="@color/white"
+        android:layout_marginHorizontal="10dp"
+        android:padding="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pickupHeader"
+        android:text="Pick-up Location:"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/requestDestinationInput"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/requestPickupInput"
+        android:hint="Pick-up Address"
+        android:layout_below="@id/pickupHeader"
+        android:background="#30ffffff"
+        android:textColorHint="@color/white"
+        android:layout_marginHorizontal="10dp"
+        android:padding="15dp"/>
+
+    <LinearLayout
+        android:id="@+id/requestBtnLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/requestPickupInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelRequestBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/submitRequestBtn"
+            android:backgroundTint="#576CBC"
+            android:layout_marginHorizontal="20dp"
+            android:text="CANCEL" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submitRequestBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/buttonBackground"
+            android:layout_marginHorizontal="20dp"
+            android:text="SUBMIT"/>
+    </LinearLayout>
+
+</RelativeLayout>
