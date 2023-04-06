@@ -35,7 +35,7 @@ public class CreateAccountPage extends Fragment{
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(CreateAccountPage.this)
-                        .navigate(R.id.action_CreateAccountPage_to_FirstFragment);
+                        .navigate(R.id.action_CreateAccountPage_to_EmailVerificationPage);
             }
         });
     }

@@ -8,7 +8,7 @@
     tools:context="AccountReg.EmailVerificationPage">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/send_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/SendCodeButton"
@@ -25,8 +25,21 @@
         android:text="@string/email_verification"
         android:textColor="#070707"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/send_code"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/email_verif_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        app:backgroundTint="@color/buttonBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/send_code"
+        app:layout_constraintVertical_bias="0.829" />
 </androidx.constraintlayout.widget.ConstraintLayout>

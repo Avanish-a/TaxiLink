@@ -8,20 +8,20 @@
     tools:context="AccountReg.PolicyPage">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/policy_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/AccountRegSubmit"
+        android:text="@string/AccountRegCancel"
         app:backgroundTint="@color/buttonBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/policy_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
-        android:text="@string/AccountRegCancel"
+        android:text="@string/AccountRegSubmit"
         app:backgroundTint="@color/buttonBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

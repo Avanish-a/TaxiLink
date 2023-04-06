@@ -10,7 +10,7 @@
         android:label="@string/create_account_label"
         tools:layout="@layout/create_account" >
         <action
-            android:id="@+id/action_CreateAccountPage_to_FirstFragment"
+            android:id="@+id/action_CreateAccountPage_to_EmailVerificationPage"
             app:destination="@id/EmailVerificationPage" />
     </fragment>
     <fragment
@@ -18,6 +18,16 @@
         android:name="com.example.taxilink.AccountReg.EmailVerificationPage"
         android:label="@string/email_verification"
         tools:layout="@layout/email_verif" >
+        <action
+            android:id="@+id/action_EmailVerificationPage_to_PolicyPage"
+            app:destination="@id/PolicyPage" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/PolicyPage"
+        android:name="com.example.taxilink.AccountReg.PolicyPage"
+        android:label="@string/policy_page"
+        tools:layout="@layout/policy_page">
 
     </fragment>
 </navigation>
