@@ -3,4 +3,5 @@
     <string name="rating_phrase">Please rate your fellow taxi riders:</string>
     <string name="car_pooler_name">Name 1</string>
     <string name="car_pooler_name2">Name 2</string>
+    <string name="arrival_phrase">It looks like you have arrived!</string>
 </resources>
