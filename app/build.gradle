@@ -1,9 +1,6 @@
 plugins {
     id 'com.android.application'
-    id "androidx.navigation.safeargs"
 }
-
-apply plugin: 'androidx.navigation.safeargs'
 
 android {
     namespace 'com.example.taxilink'
