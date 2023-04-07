@@ -1,24 +1,87 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">TaxiLink</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="create_account_label">Create Account</string>
-    <string name="policy_page">Policy Page</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="AccountRegCancel">Cancel</string>
-    <string name="AccountRegSubmit">Submit</string>
-    <string name="EmailTextBox">Email</string>
-    <string name="PasswordTextBox">Password</string>
-    <string name="DateTextBox">Date</string>
-    <string name="LastNameTextBox">Last Name</string>
-    <string name="FirstNameTextBox">First Name</string>
-    <string name="CreateAccountTitle">Create Account</string>
-    <string name="SendCodeButton">Send Code</string>
+
+
+    <!-- Strings used for Page Navigation -->
+    <string name="next">Next</string>
+    <string name="back">Go Back</string>
+    <string name="previous">Previous</string>
+    <!-- Home Page -->
+    <string name="request_link_home_page">Request Link</string>
+    <string name="offer_link_home_page">Offer Link</string>
+
+
+    <!-- Strings used for Login System -->
+    <!-- Login Page -->
+    <string name="login_button">LOGIN</string>
+    <string name="login_header">Log In</string>
+    <string name="login_new_account_button">Not a member? Create a new account</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+
+
+    <!-- Strings used for Account Registration system -->
+    <!-- Create Account Page -->
+    <string name="account_reg_cancel">Cancel</string>
+    <string name="account_reg_submit">Submit</string>
+    <string name="email_field_header">Email</string>
+    <string name="password_field_header">Password</string>
+    <string name="date_field_header">Date of Birth</string>
+    <string name="last_name_field_header">Last Name</string>
+    <string name="first_name_field_header">First Name</string>
+    <string name="create_account_title">Create your Account</string>
+    <!-- Email Verification Page -->
+    <string name="send_code_button">Send Code</string>
     <string name="email_verification">Email Verification</string>
+    <!-- Policy Page -->
+    <string name="policy_page">Policy Page</string>
+
+
+    <!-- Strings used for End Ride system -->
+    <!-- Display Fare Page -->
+    <string name="fare_phrase">This is the fare for your ride:</string>
+    <!-- Carpool Ratings Page -->
+    <string name="rating_phrase">Please rate your fellow taxi riders:</string>
+    <string name="carpooler_name1">Name 1</string>
+    <string name="carpooler_name2">Name 2</string>
+    <!-- Confirm Arrival Page -->
+    <string name="arrival_phrase">It looks like you have arrived!</string>
+    <string name="confirm_arrival_button">Confirm Arrival</string>
+
+
+    <!-- Strings used for Request Link system -->
+    <!-- Request Link Main Page -->
+    <string name="request_link_main_header">Request Link</string>
+    <string name="request_link_taxi_dest_header">Taxi Destination:</string>
+    <string name="request_link_pickup_header">Pick-up Location:</string>
+    <string name="request_link_destination_hint">Destination Address</string>
+    <string name="request_link_pickup_hint">Pick-up Address</string>
+    <string name="request_link_submit_button">SUBMIT</string>
+    <string name="request_link_cancel_button" tools:ignore="ButtonCase">CANCEL</string>
+    <!-- Request Accept Deny Page -->
+    <string name="request_acc_deny_header">New Join Request</string>
+    <string name="accept_join_button">ACCEPT</string>
+    <string name="deny_join_button">DENY</string>
+    <!-- Request Results Page -->
+    <string name="request_result_header">Available Links</string>
+    <string name="request_result_label">Select which Link you would like to join:</string>
+
+
+    <!-- Strings used for Offer Link system -->
+    <!-- Offer Link Main Page -->
+    <string name="offer_link_main_header">Offer Link</string>
+    <string name="offer_link_welcome">Welcome to Offer Link! \n Start Offer by scanning the Taxi QR code:</string>
+    <string name="offer_link_scan_qr">Scan Taxi QR code</string>
+
+
+    <!-- Strings used for Friendship system -->
+
 </resources>

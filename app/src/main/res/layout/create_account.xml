@@ -11,94 +11,131 @@
         android:id="@+id/CancelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/AccountRegCancel"
+        android:layout_marginStart="8dp"
+        android:text="@string/account_reg_cancel"
         app:backgroundTint="@color/buttonBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/dob_field"
+        app:layout_constraintVertical_bias="0.891" />
 
     <Button
         android:id="@+id/SubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/AccountRegSubmit"
+        android:layout_marginEnd="8dp"
+        android:text="@string/account_reg_submit"
         app:backgroundTint="@color/buttonBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/dob_field"
+        app:layout_constraintVertical_bias="0.891" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/emailRegField"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:hint="@string/EmailTextBox"
+        android:hint="@string/email_field_header"
         android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/lastNameField"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/lastNameField"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:hint="@string/LastNameTextBox"
+        android:hint="@string/last_name_field_header"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/firstNameField"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/firstNameField"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="50dp"
         android:ems="10"
-        android:hint="@string/FirstNameTextBox"
+        android:hint="@string/first_name_field_header"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/create_account_header"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/create_account_header"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginBottom="45dp"
-        android:text="@string/CreateAccountTitle"
-        android:textSize="34sp"
+        android:text="@string/create_account_title"
         android:textColor="#0B0A0A"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.116" />
+        app:layout_constraintVertical_bias="0.115" />
 
     <EditText
-        android:id="@+id/editTextDate2"
+        android:id="@+id/dob_field"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="200dp"
         android:ems="10"
-        android:hint="@string/DateTextBox"
+        android:hint="@string/date_field_header"
         android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/password_field" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/password_field"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/PasswordTextBox"
+        android:hint="@string/password_field_header"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
+        app:layout_constraintTop_toBottomOf="@+id/emailRegField" />
+
+    <TextView
+        android:id="@+id/datePicker"
+        android:layout_width="201dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="142dp"
+        android:background="@color/buttonBackground"
+        android:hint="@string/date_field_header"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dob_field"
+        app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
