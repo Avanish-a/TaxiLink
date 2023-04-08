@@ -11,13 +11,14 @@ public class MapsInformation {
     String routeInfo;
     Double distance;
 
-    // Look into how to stsructure this: should be startLocation: jlkjklj , endLocation: jalkjklej
-//    public Map<String, String> getRideInfo(){
-////        Map<String, String> rideInfo = new HashMap<String, String>(){
-////
-////        }
-////        return test;
-//    }
+//     Look into how to stsructure this: should be startLocation: jlkjklj , endLocation: jalkjklej
+    public Map<String, String> getRideInfo(){
+        Map<String, String> rideInfo = new HashMap<String, String>();
+        rideInfo.put("startLocation", startLocation);
+        rideInfo.put("endLocation", endLocation);
+
+        return rideInfo;
+    }
 
     public String generateRoute(String startLocation, String endLocation){
         return "testing generate route";
@@ -27,4 +28,15 @@ public class MapsInformation {
     public ArrayList<String> getNearbyLocations(String endLocation){
         return nearbyLocations;
     }
+
+    // Code for testing my functions
+//    public static void main(String[] args) {
+//        MapsInformation testClass = new MapsInformation();
+//        testClass.endLocation = "78 Tea Rose Street";
+//        testClass.startLocation = "176 Haddon Avenue";
+//        System.out.println(testClass.getRideInfo());
+//
+//    }
 }
+
+
