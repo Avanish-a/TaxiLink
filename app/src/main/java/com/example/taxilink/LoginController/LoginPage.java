@@ -33,7 +33,7 @@ public class LoginPage extends AppCompatActivity {
                 String emailRSA = LoginController.encryptionController.encrypt(enteredEmail);
                 String passRSA = LoginController.encryptionController.encrypt(enteredPass);
 
-                if (LoginController.login(emailRSA, passRSA)) {
+                if (LoginController.login(emailRSA, passRSA) != null) {
                     startActivity(new Intent(v.getContext(), HomePage.class));
                 }
                 else {
