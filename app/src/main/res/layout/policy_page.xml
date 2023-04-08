@@ -11,7 +11,7 @@
         android:id="@+id/policy_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/AccountRegCancel"
+        android:text="@string/account_reg_cancel"
         app:backgroundTint="@color/buttonBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
-        android:text="@string/AccountRegSubmit"
+        android:text="@string/account_reg_submit"
         app:backgroundTint="@color/buttonBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

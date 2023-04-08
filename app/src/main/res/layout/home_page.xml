@@ -6,31 +6,37 @@
     android:background="@color/pageBackground">
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/requestLinkBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/buttonBackground"
-        android:id="@+id/requestLinkBtn"
-        android:text="Request Link"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
         android:width="350dp"
-        android:minWidth="200dp"
         android:height="250dp"
-        android:layout_margin="30dp"
-        android:textSize="30dp"
-        android:layout_centerHorizontal="true"/>
+        android:backgroundTint="@color/buttonBackground"
+        android:minWidth="200dp"
+        android:text="@string/request_link_home_page"
+        android:textSize="30sp" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/offerLinkBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/buttonBackground"
-        android:id="@+id/offerLinkBtn"
-        android:text="Offer Link"
-        android:width="350dp"
-        android:minWidth="200dp"
-        android:height="250dp"
-        android:layout_margin="30dp"
+        android:layout_below="@id/requestLinkBtn"
         android:layout_centerHorizontal="true"
-        android:textSize="30dp"
-        android:layout_below="@id/requestLinkBtn"/>
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:width="350dp"
+        android:height="250dp"
+        android:backgroundTint="@color/buttonBackground"
+        android:minWidth="200dp"
+        android:text="@string/offer_link_home_page"
+        android:textSize="30sp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
