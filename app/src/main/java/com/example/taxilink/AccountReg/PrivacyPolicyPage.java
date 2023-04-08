@@ -10,13 +10,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.taxilink.FirstFragment;
 import com.example.taxilink.R;
-import com.example.taxilink.databinding.CreateAccountBinding;
+import com.example.taxilink.databinding.PrivacyPolicyPageBinding;
 
-public class CreateAccountPage extends Fragment{
+public class PrivacyPolicyPage extends Fragment {
 
-    private CreateAccountBinding binding;
+    private PrivacyPolicyPageBinding binding;
 
 
     @Override
@@ -24,25 +23,25 @@ public class CreateAccountPage extends Fragment{
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        binding = CreateAccountBinding.inflate(inflater, container, false);
+        binding = PrivacyPolicyPageBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.SubmitButton.setOnClickListener(new View.OnClickListener() {
+        binding.privacyPolicySubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(CreateAccountPage.this)
-                        .navigate(R.id.action_CreateAccountPage_to_EmailVerificationPage);
+                NavHostFragment.findNavController(PrivacyPolicyPage.this)
+                        .navigate(R.id.action_PrivacyPolicyPage_to_HomePage);
             }
         });
-        binding.BackButton.setOnClickListener(new View.OnClickListener() {
+        binding.privacyPolicyCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(CreateAccountPage.this)
-                        .navigate(R.id.action_CreateAccountPage_to_LoginPage);
+                NavHostFragment.findNavController(PrivacyPolicyPage.this)
+                        .navigate(R.id.action_PrivacyPolicyPage_to_LegalPolicyPage);
             }
         });
     }
