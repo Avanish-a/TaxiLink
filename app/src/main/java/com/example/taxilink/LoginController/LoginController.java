@@ -9,7 +9,7 @@ public class LoginController {
         String pass = encryptionController.decrypt(passRSA);
 
         // temp conditional
-        if (email == "admin" && pass == "password") {
+        if (email.equals("admin") && pass.equals("password")) {
             return true;
         }
 
