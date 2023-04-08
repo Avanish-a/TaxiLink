@@ -1,6 +1,8 @@
 package com.example.taxilink.TaxiSessionController;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,5 +20,20 @@ public class RequestLinkPage extends AppCompatActivity {
 
         MaterialButton submitBtn = (MaterialButton) findViewById(R.id.submitRequestButton);
         MaterialButton cancelBtn = (MaterialButton) findViewById(R.id.cancelRequestButton);
+
+        submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // call TaxiSessionController with a method to encrypt and submit data to
+                // requestLinkController
+            }
+        });
+
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), HomePage.class));
+            }
+        });
     }
 }

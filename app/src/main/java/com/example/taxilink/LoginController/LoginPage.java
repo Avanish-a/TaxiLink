@@ -30,8 +30,8 @@ public class LoginPage extends AppCompatActivity {
                 String enteredEmail = email.getText().toString();
                 String enteredPass = password.getText().toString();
 
-                String emailRSA = RSA.encrypt(enteredEmail);
-                String passRSA = RSA.encrypt(enteredPass);
+                String emailRSA = LoginController.encryptionController.encrypt(enteredEmail);
+                String passRSA = LoginController.encryptionController.encrypt(enteredPass);
 
                 if (LoginController.login(emailRSA, passRSA)) {
                     startActivity(new Intent(v.getContext(), HomePage.class));
