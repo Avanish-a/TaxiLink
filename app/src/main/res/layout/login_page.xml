@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pageBackground">
@@ -7,65 +9,89 @@
     <!-- Once log is made, it'll go here -->
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/loginHeader"
-        android:text="Log In"
-        android:textColor="@color/white"
-        android:textSize="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/login_header"
         android:textAlignment="center"
-        android:layout_margin="50dp"
-        android:textStyle="bold"/>
+        android:textColor="@color/buttonBackground"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/emailField"
-        android:layout_below="@id/loginHeader"
-        android:background="#30ffffff"
-        android:hint="Email"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:layout_margin="10dp"
-        android:padding="20dp"
-        android:drawableLeft="@drawable/baseline_email_24"
-        android:drawablePadding="5dp"/>
-
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/passwordField"
-        android:layout_below="@id/emailField"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="#30ffffff"
-        android:hint="Password"
+        android:drawableLeft="@drawable/baseline_email_24"
+        android:drawablePadding="5dp"
+        android:hint="@string/login_email_hint"
+        android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:layout_margin="10dp"
-        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginHeader" />
+
+    <EditText
+        android:id="@+id/passwordField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#30ffffff"
         android:drawableLeft="@drawable/baseline_key_24"
         android:drawablePadding="5dp"
-        android:inputType="textPassword"/>
+        android:hint="@string/login_password_hint"
+        android:inputType="textPassword"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailField" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/loginBtn"
-        android:layout_below="@id/passwordField"
-        android:text="LOGIN"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@color/buttonBackground"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"/>
+        android:text="@string/login_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordField" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/createNewAcct"
-        android:layout_below="@id/loginBtn"
-        android:text="Not a member? Create new account"
-        android:textColor="@color/white"
+    <Button
+        android:id="@+id/loginNewAccountButton"
+        android:layout_width="311dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="170dp"
+        android:background="@android:color/transparent"
+        android:text="@string/login_new_account_button"
         android:textAlignment="center"
-        android:layout_margin="20dp"
-        android:textSize="15dp"/>
+        android:textColor="@color/buttonBackground"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        app:layout_constraintVertical_bias="0.0" />
+    <!--android:paddingLeft="10"-->
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
