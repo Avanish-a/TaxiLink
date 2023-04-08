@@ -3,10 +3,10 @@ package com.example.taxilink.LoginController;
 import com.example.taxilink.EncryptionController.RSAEncryption.RSA;
 
 public class LoginController {
-    static RSA encryptionController = new RSA();
+    private static RSA encryptionController = new RSA();
     public static String login(String emailRSA, String passRSA) {
-        String email = encryptionController.decrypt(emailRSA);
-        String pass = encryptionController.decrypt(passRSA);
+        String email = decrypt(emailRSA);
+        String pass = decrypt(passRSA);
 
         // temp conditional
         if (email.equals("admin") && pass.equals("password")) {
@@ -15,5 +15,12 @@ public class LoginController {
         }
 
         return null;
+    }
+
+    protected static String encrypt(String data) {
+        return encryptionController.encrypt(data);
+    }
+    protected static String decrypt(String data) {
+        return encryptionController.decrypt(data);
     }
 }

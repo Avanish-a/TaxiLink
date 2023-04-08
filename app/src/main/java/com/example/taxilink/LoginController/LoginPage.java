@@ -12,7 +12,6 @@ import com.example.taxilink.TaxiSessionController.HomePage;
 import com.google.android.material.button.MaterialButton;
 
 public class LoginPage extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +29,8 @@ public class LoginPage extends AppCompatActivity {
                 String enteredEmail = email.getText().toString();
                 String enteredPass = password.getText().toString();
 
-                String emailRSA = LoginController.encryptionController.encrypt(enteredEmail);
-                String passRSA = LoginController.encryptionController.encrypt(enteredPass);
+                String emailRSA = LoginController.encrypt(enteredEmail);
+                String passRSA = LoginController.encrypt(enteredPass);
 
                 if (LoginController.login(emailRSA, passRSA) != null) {
                     startActivity(new Intent(v.getContext(), HomePage.class));
