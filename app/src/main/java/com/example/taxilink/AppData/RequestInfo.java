@@ -8,8 +8,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.taxilink.AccountReg.CreateAccountPage;
 import com.example.taxilink.BaseEntity.Request;
+import com.example.taxilink.R;
 import com.example.taxilink.databinding.RequestLinkPageBinding;
 
 import java.util.HashMap;
@@ -38,5 +41,16 @@ public class RequestInfo extends Fragment {
         binding = RequestLinkPageBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
+    }
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        binding.cancelRequestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(RequestInfo.this)
+                        .navigate(R.id.action_RequestLink_to_HomePage);
+            }
+        });
     }
 }

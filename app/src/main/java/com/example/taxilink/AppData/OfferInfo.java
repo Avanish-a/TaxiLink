@@ -53,5 +53,17 @@ public class OfferInfo extends Fragment {
         return binding.getRoot();
 
     }
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        binding.offerBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(OfferInfo.this)
+                        .navigate(R.id.action_OfferLink_to_HomePage);
+            }
+        });
+
+    }
 
 }
