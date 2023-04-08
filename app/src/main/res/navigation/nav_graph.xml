@@ -55,8 +55,7 @@
     </fragment>
     <fragment
         android:id="@+id/LoginPage"
-        android:name="com.example.taxilink.Login.Login"
-        android:label="@string/login_header"
+        android:name="com.example.taxilink.LoginController.LoginPage"        android:label="@string/login_header"
         tools:layout="@layout/login_page">
 
         <action

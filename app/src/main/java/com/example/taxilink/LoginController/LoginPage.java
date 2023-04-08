@@ -1,27 +1,43 @@
 package com.example.taxilink.LoginController;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+
 import com.example.taxilink.EncryptionController.RSAEncryption.RSA;
 import com.example.taxilink.R;
-import com.example.taxilink.TaxiSessionController.HomePage;
+import com.example.taxilink.databinding.LoginPageBinding;
 import com.google.android.material.button.MaterialButton;
 
-public class LoginPage extends AppCompatActivity {
+public class LoginPage extends Fragment {
+
+    private LoginPageBinding binding;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_page);
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
 
-        TextView email = (TextView) findViewById(R.id.emailField);
-        TextView password = (TextView) findViewById(R.id.passwordField);
+        binding = LoginPageBinding.inflate(inflater, container, false);
+        return binding.getRoot();
 
-        MaterialButton loginBtn = (MaterialButton) findViewById(R.id.loginBtn);
-        TextView createAccount = (TextView) findViewById(R.id.createNewAcct);
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        TextView email = binding.emailField;
+        TextView password = binding.passwordField;
+        MaterialButton loginBtn = binding.loginBtn;
+        TextView createAccount = binding.createNewAcct;
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,10 +49,10 @@ public class LoginPage extends AppCompatActivity {
                 String passRSA = LoginController.encrypt(enteredPass);
 
                 if (LoginController.login(emailRSA, passRSA) != null) {
-                    startActivity(new Intent(v.getContext(), HomePage.class));
-                }
-                else {
-                    Toast.makeText(LoginPage.this, "Incorrect email or password." +
+                    NavHostFragment.findNavController(LoginPage.this)
+                            .navigate(R.id.action_LoginPage_to_HomePage);
+                } else {
+                    Toast.makeText(LoginPage.this.getContext(), "Incorrect email or password." +
                             " Please try again.", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -45,8 +61,8 @@ public class LoginPage extends AppCompatActivity {
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirect to create account page
-                // startActivity(new Intent(v.getContext(), CreateAccount.class));
+                NavHostFragment.findNavController(LoginPage.this)
+                        .navigate(R.id.action_LoginPage_to_CreateAccountPage);
             }
         });
     }
