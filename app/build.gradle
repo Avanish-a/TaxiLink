@@ -47,9 +47,3 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
-
-//task MapsInformationMain(type: Exec){
-//    classpath = sourceSets.main.runtimeClasspath
-////    outputClassName = 'com.example.taxilink.RideInformation.MapsInformation'
-//    main = 'com.example.taxilink.RideInformation.MapsInformation'
-//}
