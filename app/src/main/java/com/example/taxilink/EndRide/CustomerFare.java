@@ -1,5 +1,18 @@
 package com.example.taxilink.EndRide;
 
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+
+import com.example.taxilink.R;
+import com.example.taxilink.databinding.DisplayFarePageBinding;
+
 import java.util.Map;
 
 import android.content.Intent;
@@ -56,5 +69,6 @@ public class CustomerFare extends AppCompatActivity{
         fare = distance * fareRate;
         return fare;
     }
+
 
 }

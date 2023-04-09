@@ -48,10 +48,12 @@
     <!-- Strings used for End Ride system -->
     <!-- Display Fare Page -->
     <string name="fare_phrase">This is the fare for your ride:</string>
+    <string name="Display_Fare">Display Fare</string>
     <!-- Carpool Ratings Page -->
     <string name="rating_phrase">Please rate your fellow taxi riders:</string>
     <string name="carpooler_name1">Name 1</string>
     <string name="carpooler_name2">Name 2</string>
+    <string name="Rating"> Rating</string>
     <!-- Confirm Arrival Page -->
     <string name="arrival_phrase">It looks like you have arrived!</string>
     <string name="confirm_arrival_button">Confirm Arrival</string>

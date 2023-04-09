@@ -3,6 +3,21 @@ package com.example.taxilink.EndRide;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+
+import com.example.taxilink.R;
+import com.example.taxilink.databinding.RatingPageBinding;
+
+import java.util.Map;
+
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -72,4 +87,9 @@ public class CustomerRatingFormPage extends AppCompatActivity {
     private String handleTouch(){
         return "Touch done";
     }
-}
+    private RatingPageBinding binding;
+
+
+
+    }
+

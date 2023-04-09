@@ -15,7 +15,22 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.taxilink.R;
 
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+
+import com.example.taxilink.R;
+import com.example.taxilink.databinding.ConfirmArrivalBinding;
+
 public class ConfirmArrivalPage extends AppCompatActivity {
+
+
     Boolean endStatus;
     Button confirmButton;
 
@@ -36,9 +51,4 @@ public class ConfirmArrivalPage extends AppCompatActivity {
 
     }
 
-
-
-    private String handleTouch(){
-        return "Handle Touch pressed";
-    }
 }
