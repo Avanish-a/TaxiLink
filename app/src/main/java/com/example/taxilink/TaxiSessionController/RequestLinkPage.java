@@ -1,56 +1,38 @@
 package com.example.taxilink.TaxiSessionController;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-
+import androidx.appcompat.app.AppCompatActivity;
 import com.example.taxilink.R;
-import com.example.taxilink.databinding.RequestLinkPageBinding;
 import com.google.android.material.button.MaterialButton;
 
-public class RequestLinkPage extends Fragment {
-
-    private RequestLinkPageBinding binding;
-
+public class RequestLinkPage extends AppCompatActivity {
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.request_link_page);
 
-        binding = RequestLinkPageBinding.inflate(inflater, container, false);
-        return binding.getRoot();
+        TextView destination = (TextView) findViewById(R.id.requestDestinationInput);
+        TextView start = (TextView) findViewById(R.id.requestPickupInput);
 
-    }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        TextView destination = binding.requestDestinationInput;
-        TextView start = binding.requestPickupInput;
-        MaterialButton submitBtn = binding.submitRequestButton;
-        MaterialButton cancelBtn = binding.cancelRequestButton;
+        MaterialButton submitBtn = (MaterialButton) findViewById(R.id.submitRequestButton);
+        MaterialButton cancelBtn = (MaterialButton) findViewById(R.id.cancelRequestButton);
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String enteredDestination = destination.getText().toString();
-                String enteredPickup = start.getText().toString();
+                // call TaxiSessionController with a method to encrypt and submit data to
+                // requestLinkController
+            }
+        });
 
-                if (!enteredDestination.isEmpty() && !enteredPickup.isEmpty()) {
-                    NavHostFragment.findNavController(RequestLinkPage.this)
-                            .navigate(R.id.action_LoginPage_to_HomePage);
-                } else {
-                    Toast.makeText(RequestLinkPage.this.getContext(), "Incorrect email or password." +
-                            " Please try again.", Toast.LENGTH_SHORT).show();
-                }
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), HomePage.class));
             }
         });
     }
