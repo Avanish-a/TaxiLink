@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/CreateAccountPage">
+    app:startDestination="@id/LoginPage">
     <fragment
         android:id="@+id/CreateAccountPage"
         android:name="com.example.taxilink.AccountReg.CreateAccountPage"
@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_CreateAccountPage_to_EmailVerificationPage"
             app:destination="@id/EmailVerificationPage" />
+        <action
+            android:id="@+id/action_CreateAccountPage_to_LoginPage"
+            app:destination="@id/LoginPage" />
     </fragment>
     <fragment
         android:id="@+id/EmailVerificationPage"
@@ -20,14 +23,85 @@
         tools:layout="@layout/email_verif" >
         <action
             android:id="@+id/action_EmailVerificationPage_to_PolicyPage"
-            app:destination="@id/PolicyPage" />
+            app:destination="@id/LegalPolicyPage" />
+        <action
+            android:id="@+id/action_EmailVerificationPage_to_CreateAccountPage"
+            app:destination="@id/CreateAccountPage" />
 
     </fragment>
     <fragment
-        android:id="@+id/PolicyPage"
-        android:name="com.example.taxilink.AccountReg.PolicyPage"
-        android:label="@string/policy_page"
-        tools:layout="@layout/policy_page">
+        android:id="@+id/LegalPolicyPage"
+        android:name="com.example.taxilink.AccountReg.LegalPolicyPage"
+        android:label="@string/legal_policy_page"
+        tools:layout="@layout/legal_policy_page">
+        <action
+            android:id="@+id/action_LegalPolicyPage_to_PrivacyPolicyPage"
+            app:destination="@id/PrivacyPolicyPage" />
+        <action
+            android:id="@+id/action_LegalPolicyPage_to_EmailVerificationPage"
+            app:destination="@id/EmailVerificationPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/PrivacyPolicyPage"
+        android:name="com.example.taxilink.AccountReg.PrivacyPolicyPage"
+        android:label="@string/privacy_policy_page"
+        tools:layout="@layout/privacy_policy_page">
+        <action
+            android:id="@+id/action_PrivacyPolicyPage_to_HomePage"
+            app:destination="@id/HomePage" />
+        <action
+            android:id="@+id/action_PrivacyPolicyPage_to_LegalPolicyPage"
+            app:destination="@id/LegalPolicyPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/LoginPage"
+        android:name="com.example.taxilink.LoginController.LoginPage"        android:label="@string/login_header"
+        tools:layout="@layout/login_page">
 
+        <action
+            android:id="@+id/action_LoginPage_to_HomePage"
+            app:destination="@id/HomePage" />
+        <action
+            android:id="@+id/action_LoginPage_to_CreateAccountPage"
+            app:destination="@id/CreateAccountPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/HomePage"
+        android:name="com.example.taxilink.Login.HomePage"
+        android:label="@string/home_page"
+        tools:layout="@layout/home_page">
+        <action
+            android:id="@+id/action_HomePage_to_RequestLink"
+            app:destination="@id/RequestLink" />
+        <action
+            android:id="@+id/action_HomePage_to_OfferLink"
+            app:destination="@id/OfferLink" />
+    </fragment>
+    <fragment
+        android:id="@+id/OfferLink"
+        android:name="com.example.taxilink.AppData.OfferInfo"
+        android:label="@string/offer_link_main_header"
+        tools:layout="@layout/offer_link_page">
+        <action
+            android:id="@+id/action_OfferLink_to_HomePage"
+            app:destination="@id/HomePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/RequestLink"
+        android:name="com.example.taxilink.AppData.RequestInfo"
+        android:label="@string/request_link_main_header"
+        tools:layout="@layout/request_link_page">
+        <action
+            android:id="@+id/action_RequestLink_to_HomePage"
+            app:destination="@id/HomePage" />
+        <action
+            android:id="@+id/action_RequestLink_to_RequestResultPage"
+            app:destination="@id/RequestResultPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/RequestResultPage"
+        android:name="com.example.taxilink.AppData.RequestInfo"
+        android:label="@string/request_result_header"
+        tools:layout="@layout/request_result_page">
     </fragment>
 </navigation>

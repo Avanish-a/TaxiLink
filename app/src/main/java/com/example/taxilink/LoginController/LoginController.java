@@ -7,13 +7,13 @@ public class LoginController {
     public static String login(String emailRSA, String passRSA) {
         String email = decrypt(emailRSA);
         String pass = decrypt(passRSA);
-
         // temp conditional
         if (email.equals("admin") && pass.equals("password")) {
             String customerID = "12345678";
             return customerID;
         }
-
+        System.out.println(email);
+        System.out.println(pass);
         return null;
     }
 
