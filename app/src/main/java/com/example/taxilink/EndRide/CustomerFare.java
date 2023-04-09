@@ -49,7 +49,6 @@ public class CustomerFare extends AppCompatActivity{
 
 
     }
-    
 
 
     private double calculateFare(double distance, double fareRate){
