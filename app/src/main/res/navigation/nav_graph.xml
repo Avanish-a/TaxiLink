@@ -79,6 +79,9 @@
         <action
             android:id="@+id/action_HomePage_to_ConfirmArrivalPage"
             app:destination="@id/ConfirmArrivalPage" />
+        <action
+            android:id="@+id/action_HomePage_to_NearbyPage"
+            app:destination="@id/NearbyPage" />
     </fragment>
     <fragment
         android:id="@+id/OfferLink"
@@ -133,5 +136,14 @@
         <action
             android:id="@+id/action_ConfirmArrivalPage_to_DisplayFarePage"
             app:destination="@id/DisplayFarePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/NearbyPage"
+        android:name="com.example.taxilink.RideInformation.NearbyPage"
+        android:label="@string/Rating"
+        tools:layout="@layout/nearby_page">
+        <action
+            android:id="@+id/action_NearbyPage_to_HomePage"
+            app:destination="@id/HomePage" />
     </fragment>
 </navigation>
