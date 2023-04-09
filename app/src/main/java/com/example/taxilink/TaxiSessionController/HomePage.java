@@ -15,14 +15,5 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
-
-        MaterialButton requestLinkBtn = (MaterialButton) findViewById(R.id.requestLinkBtn);
-
-        requestLinkBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), RequestLinkPage.class));
-            }
-        });
     }
 }
