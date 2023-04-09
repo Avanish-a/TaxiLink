@@ -26,11 +26,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/requestLinkBtn"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="189dp"
         android:width="350dp"
         android:height="250dp"
         android:backgroundTint="@color/buttonBackground"
@@ -65,5 +66,18 @@
         android:layout_marginBottom="65dp"
         android:backgroundTint="@color/buttonBackground"
         android:text="Confirm Arrival" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/confirmButton2"
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="274dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="62dp"
+        android:backgroundTint="@color/buttonBackground"
+        android:text="Nearby Locations" />
 
 </RelativeLayout>
