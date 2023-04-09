@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +14,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.taxilink.R;
 import com.example.taxilink.databinding.RatingPageBinding;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class CustomerRatingFormPage extends Fragment {
@@ -27,7 +29,7 @@ public class CustomerRatingFormPage extends Fragment {
     }
 
     private void submitRating(Map<String, String> customerRatingInformation){
-        System.out.println("test");
+        System.out.println("Submitted to database: "+customerRatingInformation);
     }
 
     private String handleTouch(){
@@ -48,9 +50,15 @@ public class CustomerRatingFormPage extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.ratingNext.setOnClickListener(new View.OnClickListener() {
+        RatingBar ratingBar = binding.ratingBar;
+        Map<String, String> rating_map = new HashMap<String, String>();
+
+        binding.submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                float rating = ratingBar.getRating();
+                rating_map.put("Customer 1",Float.toString(rating));
+                submitRating(rating_map);
                 NavHostFragment.findNavController(CustomerRatingFormPage.this)
                         .navigate(R.id.action_RatingPage_to_HomePage);
             }
