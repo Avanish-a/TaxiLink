@@ -48,11 +48,12 @@ public class RequestLinkPage extends Fragment {
                 // requestLinkController
                 String enteredDestination = destination.getText().toString();
                 String enteredPickup = start.getText().toString();
+
                 if (!enteredDestination.isEmpty() && !enteredPickup.isEmpty()) {
                     NavHostFragment.findNavController(RequestLinkPage.this)
                             .navigate(R.id.action_RequestLink_to_RequestResultPage);
                 } else {
-                    Toast.makeText(RequestLinkPage.this.getContext(), "Please fill in a Destination and pickup location" +
+                    Toast.makeText(RequestLinkPage.this.getContext(), "Destination or pickup location is empty." +
                             " Please try again.", Toast.LENGTH_SHORT).show();
                 }
             }

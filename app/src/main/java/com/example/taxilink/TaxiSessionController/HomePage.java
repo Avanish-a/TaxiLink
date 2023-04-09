@@ -8,13 +8,11 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.taxilink.R;
 import com.example.taxilink.databinding.HomePageBinding;
-import com.google.android.material.button.MaterialButton;
 
 public class HomePage extends Fragment {
     private HomePageBinding binding;
