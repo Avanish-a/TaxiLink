@@ -11,7 +11,7 @@ public class MapsInformation {
     String routeInfo;
     Double distance;
 
-//     Look into how to stsructure this: should be startLocation: jlkjklj , endLocation: jalkjklej
+//     Look into how to structure this: should be startLocation: jlkjklj , endLocation: jalkjklej
     public Map<String, String> getRideInfo(){
         Map<String, String> rideInfo = new HashMap<String, String>();
         rideInfo.put("startLocation", startLocation);

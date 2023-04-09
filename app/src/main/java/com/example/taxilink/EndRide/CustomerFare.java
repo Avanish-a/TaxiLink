@@ -8,6 +8,8 @@ public class CustomerFare {
     Map<String, String> rideInformation;
 
     private Double calculateFare(Map<String, String> rideInformation){
+
+        // use the maps ride info function
         fare = 100.00;
         return fare;
     }
