@@ -38,8 +38,6 @@ public class ConfirmArrivalPage extends AppCompatActivity {
 
 
 
-
-
     private String handleTouch(){
         return "Handle Touch pressed";
     }
