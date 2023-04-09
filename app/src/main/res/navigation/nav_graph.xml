@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/HomePage"
-        android:name="com.example.taxilink.Login.HomePage"
+        android:name="com.example.taxilink.TaxiSessionController.HomePage"
         android:label="@string/home_page"
         tools:layout="@layout/home_page">
         <action
@@ -91,7 +91,7 @@
     </fragment>
     <fragment
         android:id="@+id/RequestLink"
-        android:name="com.example.taxilink.AppData.RequestInfo"
+        android:name="com.example.taxilink.TaxiSessionController.RequestLinkPage"
         android:label="@string/request_link_main_header"
         tools:layout="@layout/request_link_page">
         <action

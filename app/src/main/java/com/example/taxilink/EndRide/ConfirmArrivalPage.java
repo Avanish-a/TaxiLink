@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.taxilink.Login.HomePage;
 import com.example.taxilink.R;
 import com.example.taxilink.databinding.ConfirmArrivalBinding;
 
