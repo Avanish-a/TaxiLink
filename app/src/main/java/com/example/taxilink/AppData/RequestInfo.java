@@ -17,7 +17,7 @@ import com.example.taxilink.databinding.RequestLinkPageBinding;
 
 import java.util.HashMap;
 
-public class RequestInfo extends Fragment {
+public class RequestInfo{
     private HashMap<String, Request> requests = new HashMap<String, Request>();
 
     private RequestLinkPageBinding binding;
@@ -33,24 +33,5 @@ public class RequestInfo extends Fragment {
     private String generateReqID() {
         return "";
     }
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
 
-        binding = RequestLinkPageBinding.inflate(inflater, container, false);
-        return binding.getRoot();
-
-    }
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        binding.cancelRequestButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(RequestInfo.this)
-                        .navigate(R.id.action_RequestLink_to_HomePage);
-            }
-        });
-    }
 }
