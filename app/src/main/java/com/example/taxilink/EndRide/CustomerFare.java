@@ -1,7 +1,11 @@
 package com.example.taxilink.EndRide;
 
 import java.util.Map;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.taxilink.R;
@@ -12,6 +16,7 @@ public class CustomerFare extends AppCompatActivity{
     private double fareRate;
     private double distance;
     Map<String, String> rideInformation;
+    Button nextButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +33,24 @@ public class CustomerFare extends AppCompatActivity{
         // display the total fare on the screen
         TextView fareTextView = findViewById(R.id.fareValue);
         fareTextView.setText(String.format("$%.2f", fare));
-    }
 
-    // make an Onclick function
+        // code for clicking the button
+        nextButton = findViewById(R.id.display_next);
+
+        // Set a click listener to the button - will have to change based on what Travis gives me
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Code to navigate to the next page goes here
+                Intent intent = new Intent(CustomerFare.this, CustomerRatingFormPage.class);
+                startActivity(intent);
+            }
+        });
+
+
+    }
+    
+
 
     private double calculateFare(double distance, double fareRate){
         // use the maps ride info function
