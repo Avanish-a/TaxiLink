@@ -12,8 +12,6 @@ public class LoginController {
             String customerID = "12345678";
             return customerID;
         }
-        System.out.println(email);
-        System.out.println(pass);
         return null;
     }
 
