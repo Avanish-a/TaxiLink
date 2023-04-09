@@ -4,8 +4,6 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="create_account_label">Create Account</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
@@ -15,6 +13,7 @@
     <string name="back">Go Back</string>
     <string name="previous">Previous</string>
     <!-- Home Page -->
+    <string name="home_page">Home Page</string>
     <string name="request_link_home_page">Request Link</string>
     <string name="offer_link_home_page">Offer Link</string>
 
@@ -30,6 +29,7 @@
 
     <!-- Strings used for Account Registration system -->
     <!-- Create Account Page -->
+    <string name="create_account_label">Create Account</string>
     <string name="account_reg_cancel">Cancel</string>
     <string name="account_reg_submit">Submit</string>
     <string name="email_field_header">Email</string>
@@ -42,8 +42,8 @@
     <string name="send_code_button">Send Code</string>
     <string name="email_verification">Email Verification</string>
     <!-- Policy Page -->
-    <string name="policy_page">Policy Page</string>
-
+    <string name="legal_policy_page">Legal Policy</string>
+    <string name="privacy_policy_page">Privacy Policy</string>
 
     <!-- Strings used for End Ride system -->
     <!-- Display Fare Page -->
@@ -80,6 +80,8 @@
     <string name="offer_link_main_header">Offer Link</string>
     <string name="offer_link_welcome">Welcome to Offer Link! \n Start Offer by scanning the Taxi QR code:</string>
     <string name="offer_link_scan_qr">Scan Taxi QR code</string>
+    <string name="PolicyAgree">Agree</string>
+    <string name="BackButton">Back</string>
 
 
     <!-- Strings used for Friendship system -->

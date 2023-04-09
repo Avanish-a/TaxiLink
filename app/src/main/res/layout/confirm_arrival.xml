@@ -16,13 +16,13 @@
         android:text="@string/arrival_phrase"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button_first"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_first"
+        android:id="@+id/confirm_btn"
         android:layout_width="190dp"
         android:layout_height="101dp"
         android:text="@string/confirm_arrival_button"

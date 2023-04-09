@@ -37,5 +37,12 @@ public class EmailVerificationPage extends Fragment{
                         .navigate(R.id.action_EmailVerificationPage_to_PolicyPage);
             }
         });
+        binding.emailVerifBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(EmailVerificationPage.this)
+                        .navigate(R.id.action_EmailVerificationPage_to_CreateAccountPage);
+            }
+        });
     }
 }
