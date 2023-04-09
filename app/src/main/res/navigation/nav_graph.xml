@@ -76,6 +76,9 @@
         <action
             android:id="@+id/action_HomePage_to_OfferLink"
             app:destination="@id/OfferLink" />
+        <action
+            android:id="@+id/action_HomePage_to_ConfirmArrivalPage"
+            app:destination="@id/ConfirmArrivalPage" />
     </fragment>
     <fragment
         android:id="@+id/OfferLink"
@@ -103,5 +106,32 @@
         android:name="com.example.taxilink.AppData.RequestInfo"
         android:label="@string/request_result_header"
         tools:layout="@layout/request_result_page">
+    </fragment>
+    <fragment
+        android:id="@+id/DisplayFarePage"
+        android:name="com.example.taxilink.EndRide.CustomerFare"
+        android:label="@string/Display_Fare"
+        tools:layout="@layout/display_fare_page">
+        <action
+            android:id="@+id/action_DisplayFarePage_to_RatingPage"
+            app:destination="@id/RatingPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/RatingPage"
+        android:name="com.example.taxilink.EndRide.CustomerRatingFormPage"
+        android:label="@string/Rating"
+        tools:layout="@layout/rating_page">
+        <action
+            android:id="@+id/action_RatingPage_to_HomePage"
+            app:destination="@id/HomePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/ConfirmArrivalPage"
+        android:name="com.example.taxilink.EndRide.ConfirmArrivalPage"
+        android:label="@string/confirm_arrival_button"
+        tools:layout="@layout/confirm_arrival">
+        <action
+            android:id="@+id/action_ConfirmArrivalPage_to_DisplayFarePage"
+            app:destination="@id/DisplayFarePage" />
     </fragment>
 </navigation>
