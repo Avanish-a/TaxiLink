@@ -3,6 +3,7 @@ package com.example.taxilink.TaxiSessionController;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -57,5 +58,13 @@ public class HomePage extends Fragment {
                         .navigate(R.id.action_HomePage_to_NearbyPage);
             }
         });
+        binding.profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(com.example.taxilink.TaxiSessionController.HomePage.this)
+                        .navigate(R.id.action_HomePage_to_ProfilePage);
+            }
+        });
+
     }
 }

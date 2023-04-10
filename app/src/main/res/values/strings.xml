@@ -84,8 +84,15 @@
     <string name="offer_link_scan_qr">Scan Taxi QR code</string>
     <string name="PolicyAgree">Agree</string>
     <string name="BackButton">Back</string>
+    <string name="confirm_arrival">Confirm Arrival</string>
+    <string name="nearby_locations">Nearby Locations</string>
 
 
     <!-- Strings used for Friendship system -->
+    <string name="Profile">Profile</string>
+    <string name="delete_profile">Delete Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="profile_settings">Profile Settings</string>
+    <string name="friends">Friends</string>
 
 </resources>
