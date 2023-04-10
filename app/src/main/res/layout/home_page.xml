@@ -65,7 +65,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="65dp"
         android:backgroundTint="@color/buttonBackground"
-        android:text="Confirm Arrival" />
+        android:text="@string/confirm_arrival" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nearbyButton"
@@ -78,6 +78,6 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="62dp"
         android:backgroundTint="@color/buttonBackground"
-        android:text="Nearby Locations" />
+        android:text="@string/nearby_locations" />
 
 </RelativeLayout>

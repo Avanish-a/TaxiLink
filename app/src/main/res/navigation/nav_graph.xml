@@ -146,4 +146,13 @@
             android:id="@+id/action_NearbyPage_to_HomePage"
             app:destination="@id/HomePage" />
     </fragment>
+    <fragment
+        android:id="@+id/ProfilePage"
+        android:name="com.example.taxilink.TaxiSessionController.Profile"
+        android:label="@string/Profile"
+        tools:layout="@layout/profile_page">
+        <action
+            android:id="@+id/action_ProfilePage_to_HomePage"
+            app:destination="@id/HomePage" />
+    </fragment>
 </navigation>

@@ -138,5 +138,16 @@
 
 
     </RelativeLayout>
-
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ProfileBack"
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="65dp"
+        android:backgroundTint="@color/buttonBackground"
+        android:text="@string/BackButton" />
 </RelativeLayout>
