@@ -68,7 +68,7 @@
         android:text="Confirm Arrival" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/confirmButton2"
+        android:id="@+id/nearbyButton"
         android:layout_width="121dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
