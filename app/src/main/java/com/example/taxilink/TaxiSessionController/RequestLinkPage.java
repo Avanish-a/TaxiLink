@@ -21,6 +21,8 @@ import com.google.android.material.button.MaterialButton;
 
 public class RequestLinkPage extends Fragment {
     private RequestLinkPageBinding binding;
+    public static String customerDestination;
+    public static String customerStart;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -53,6 +55,10 @@ public class RequestLinkPage extends Fragment {
                     String encryptedDestination = TaxiSessionController.encrypt(enteredDestination);
                     String encryptedPickup = TaxiSessionController.encrypt(enteredDestination);
                     TaxiSessionController.submitData();
+
+                    customerDestination = encryptedDestination;
+                    customerStart = encryptedPickup;
+
                     NavHostFragment.findNavController(RequestLinkPage.this)
                             .navigate(R.id.action_RequestLink_to_RequestResultPage);
                 } else {

@@ -1,21 +1,29 @@
 package com.example.taxilink.RequestLinkController;
 import com.example.taxilink.EncryptionController.RSAEncryption.RSA;
+import com.example.taxilink.TaxiSessionController.TaxiSessionController;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class RequestLinkController {
     private static RSA encryptionController = new RSA();
-    public List<String> getCarpools(String destination) {
+    public static List<String> getCarpools(String destination) {
         List<String> availCarpools = new ArrayList<String>();
 
-        // logic to access DB and fetch carpools
+        String givenDestination = TaxiSessionController.decrypt(destination);
+
+        // match offers in database with destination
+        if (givenDestination.equals("McMaster University")) {
+            String match = "Taxi #01";
+            availCarpools.add(match);
+        }
 
         return availCarpools;
     }
-    protected String encrypt(String data) {
+    protected static String encrypt(String data) {
         return encryptionController.encrypt(data);
     }
-    protected String decrypt(String data) {
+    protected static String decrypt(String data) {
         return encryptionController.decrypt(data);
     }
 }

@@ -54,7 +54,7 @@ public class TaxiSessionController {
         return encryptionController.encrypt(data);
     }
 
-    protected static String decrypt(String data) {
+    public static String decrypt(String data) {
         return encryptionController.decrypt(data);
     }
 }

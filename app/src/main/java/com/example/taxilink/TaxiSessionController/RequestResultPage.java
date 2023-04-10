@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.taxilink.R;
+import com.example.taxilink.RequestLinkController.RequestLinkController;
 import com.example.taxilink.databinding.RequestResultPageBinding;
 
 import java.util.ArrayList;
@@ -39,16 +41,23 @@ public class RequestResultPage extends Fragment{
 
         ListView requestResults = binding.requestResults;
 
-        List<String> availableCarpools = new ArrayList<String>();
+        List<String> availableCarpools = RequestLinkController.getCarpools(RequestLinkPage.customerDestination);
 
-        // fetch array list of available taxis here -- dummy values for now
-        availableCarpools.add("Taxi 1");
-        availableCarpools.add("Taxi 2");
+        if (!availableCarpools.isEmpty()) {
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                    RequestResultPage.this.getContext(), android.R.layout.simple_list_item_1, availableCarpools);
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-                RequestResultPage.this.getContext(), android.R.layout.simple_list_item_1, availableCarpools );
+            requestResults.setAdapter(arrayAdapter);
+        }
+        else {
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                    RequestResultPage.this.getContext(), android.R.layout.simple_list_item_1, availableCarpools);
 
-        requestResults.setAdapter(arrayAdapter);
+            requestResults.setAdapter(arrayAdapter);
+
+            Toast.makeText(RequestResultPage.this.getContext(),
+                    "No matching carpools. A taxi will be called for you.", Toast.LENGTH_SHORT).show();
+        }
     }
 }
 
