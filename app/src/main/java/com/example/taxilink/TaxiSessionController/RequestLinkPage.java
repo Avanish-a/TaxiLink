@@ -50,6 +50,9 @@ public class RequestLinkPage extends Fragment {
                 String enteredPickup = start.getText().toString();
 
                 if (!enteredDestination.isEmpty() && !enteredPickup.isEmpty()) {
+                    String encryptedDestination = TaxiSessionController.encrypt(enteredDestination);
+                    String encryptedPickup = TaxiSessionController.encrypt(enteredDestination);
+                    TaxiSessionController.submitData();
                     NavHostFragment.findNavController(RequestLinkPage.this)
                             .navigate(R.id.action_RequestLink_to_RequestResultPage);
                 } else {

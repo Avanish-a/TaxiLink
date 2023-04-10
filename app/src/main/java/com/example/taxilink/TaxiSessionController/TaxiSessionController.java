@@ -27,6 +27,29 @@ public class TaxiSessionController {
 
         return customerData;
     }
+
+    public static String sendJoinRequest(String custID) {
+        return "Send Join Request";
+    }
+
+    public static boolean getRequestStatus(String custID) {
+        return true;
+    }
+
+    public static void deleteProfile(String custID) {
+
+    }
+
+    public static void updateProfile(String custID) {
+
+    }
+    public static Profile getProfile(String custID) {
+        return new Profile();
+    }
+
+    public static boolean submitData() {
+        return true;
+    }
     protected static String encrypt(String data) {
         return encryptionController.encrypt(data);
     }
