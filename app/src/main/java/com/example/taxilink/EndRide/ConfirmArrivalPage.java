@@ -45,5 +45,12 @@ public class ConfirmArrivalPage extends Fragment {
                         .navigate(R.id.action_ConfirmArrivalPage_to_DisplayFarePage);
             }
         });
+        binding.confirmarrivalback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(ConfirmArrivalPage.this)
+                        .navigate(R.id.action_ConfirmArrivalPage_to_HomePage);
+            }
+        });
     }
 }

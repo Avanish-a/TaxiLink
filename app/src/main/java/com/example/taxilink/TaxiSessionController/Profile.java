@@ -34,7 +34,14 @@ public class Profile extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(Profile.this)
-                        .navigate(R.id.action_OfferLink_to_HomePage);
+                        .navigate(R.id.action_ProfilePage_to_HomePage);
+            }
+        });
+        binding.profileSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(Profile.this)
+                        .navigate(R.id.action_ProfilePage_to_profileSettings);
             }
         });
 

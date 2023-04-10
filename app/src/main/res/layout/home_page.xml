@@ -39,45 +39,52 @@
         android:text="@string/offer_link_home_page"
         android:textSize="30sp" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#576CBC"
-        android:layout_alignParentBottom="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/home_page_nav_bar"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white">
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/ConfirmButton"
         android:layout_width="121dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="14dp"
+        android:layout_marginStart="19dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="65dp"
+        android:layout_marginBottom="82dp"
         android:backgroundTint="@color/buttonBackground"
         android:text="@string/confirm_arrival" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/nearbyButton"
-        android:layout_width="121dp"
+    <LinearLayout
+        android:id="@+id/bottomButtonsLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="274dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="62dp"
-        android:backgroundTint="@color/buttonBackground"
-        android:text="@string/nearby_locations" />
+        android:orientation="horizontal"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nearbyButton"
+            android:layout_width="164dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/buttonBackground"
+            android:text="@string/nearby_locations" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/buttonBackground"
+            android:text="@string/Profile" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Friends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/buttonBackground"
+            android:text="@string/friends" />
+
+    </LinearLayout>
 
 </RelativeLayout>
