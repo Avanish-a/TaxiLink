@@ -40,8 +40,14 @@ public class QRScanner extends Fragment {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Intent browse = new Intent( Intent.ACTION_VIEW , Uri.parse(result.getText()));
-                        startActivity(browse);
+                        if (result.getText().equals("taxilink1")) {
+                            NavHostFragment.findNavController(QRScanner.this)
+                                    .navigate(R.id.action_QR_to_ScannedOfferLink);
+                        }
+                        else {
+                            Toast.makeText(QRScanner.this.getContext(),
+                                    "Invalid QR Code", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
             }

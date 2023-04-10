@@ -103,6 +103,9 @@
         <action
             android:id="@+id/action_QR_to_OfferLink"
             app:destination="@+id/OfferLink" />
+        <action
+            android:id="@+id/action_QR_to_ScannedOfferLink"
+            app:destination="@+id/ScannedQROfferPage" />
     </fragment>
     <fragment
         android:id="@+id/ScannedQROfferPage"
