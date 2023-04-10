@@ -105,6 +105,21 @@
             app:destination="@+id/OfferLink" />
     </fragment>
     <fragment
+        android:id="@+id/ScannedQROfferPage"
+        android:name="com.example.taxilink.TaxiSessionController.OfferLinkScannerPage"
+        android:label="Scanned Offer Link Page"
+        tools:layout="@layout/offer_link_scanner_page">
+        <action
+            android:id="@+id/action_ScannedOfferLink_to_OfferAcceptDeny"
+            app:destination="@+id/OfferAcceptDenyPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/OfferAcceptDenyPage"
+        android:name="com.example.taxilink.TaxiSessionController.OfferAcceptDenyPage"
+        android:label="Offer Accept Deny Page"
+        tools:layout="@layout/request_accept_deny_page">
+    </fragment>
+    <fragment
         android:id="@+id/RequestLink"
         android:name="com.example.taxilink.TaxiSessionController.RequestLinkPage"
         android:label="@string/request_link_main_header"
@@ -157,11 +172,5 @@
         <action
             android:id="@+id/action_NearbyPage_to_HomePage"
             app:destination="@id/HomePage" />
-    </fragment>
-    <fragment
-        android:id="@+id/ScannedQROfferPage"
-        android:name="com.example.taxilink.TaxiSessionController.OfferLinkScannerPage"
-        android:label="Scanned Offer Link Page"
-        tools:layout="@layout/offer_link_scanner_page">
     </fragment>
 </navigation>
