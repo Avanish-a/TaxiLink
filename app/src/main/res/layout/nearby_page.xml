@@ -13,6 +13,7 @@
         android:layout_width="243dp"
         android:layout_height="289dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="Taxi Logo"
         app:layout_constraintBottom_toTopOf="@+id/listView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

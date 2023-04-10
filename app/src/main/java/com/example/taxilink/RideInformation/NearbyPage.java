@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,6 +21,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import com.example.taxilink.R;
+import com.example.taxilink.databinding.NearbyPageBinding;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -31,13 +33,16 @@ import okhttp3.Response;
 public class NearbyPage extends Fragment {
 
     private ListView mListView;
+    private NearbyPageBinding binding;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.nearby_page, container, false);
-        mListView = view.findViewById(R.id.listView);
-        return view;
+//        View view = inflater.inflate(R.layout.nearby_page, container, false);
+//        mListView = view.findViewById(R.id.listView);
+
+        binding = NearbyPageBinding.inflate(inflater, container, false);
+        return binding.getRoot();
 
 
     }
@@ -47,8 +52,9 @@ public class NearbyPage extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         // Get the user-provided address from the arguments bundle
-        String address = "176 Haddon Avenue South, Hamilton, ON";
+        String address = "McMaster University, ON";
         String apiKey = "AIzaSyC42oZdvHGae7r2JWS9jZ3mKA1FV37zSEU";
+        mListView = binding.listView;
 
         // Build the URL to fetch nearby places based on the address
         String url = null;
@@ -93,11 +99,21 @@ public class NearbyPage extends Fragment {
                     public void run() {
                         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, placesList);
                         mListView.setAdapter(adapter);
+
+                        // Set a click listener for the login button
+                        binding.loginBtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                System.out.println("Clicked home button");
+                                NavHostFragment.findNavController(NearbyPage.this)
+                                        .navigate(R.id.action_NearbyPage_to_HomePage);
+                            }
+                        });
                     }
-                
-
-
                 });
+
+
+
             }
         });
     }
