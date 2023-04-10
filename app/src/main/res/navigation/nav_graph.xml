@@ -173,4 +173,10 @@
             android:id="@+id/action_profileSettings_to_ProfilePage"
             app:destination="@id/ProfilePage" />
     </fragment>
+    <fragment 
+        android:id="@+id/locationMessagePage"
+        android:name="com.example.taxilink.Friendship.LocationMessage"
+        android:label="FrienshipLocationBtn"
+        tools:layout="@layout/activity_location_message">
+    </fragment>    
 </navigation>
