@@ -118,6 +118,9 @@
         <action
             android:id="@+id/action_ScannedOfferLink_to_OfferAcceptDeny"
             app:destination="@+id/OfferAcceptDenyPage" />
+        <action
+            android:id="@+id/action_ScannedOfferLink_to_HomePage"
+            app:destination="@+id/HomePage" />
     </fragment>
     <fragment
         android:id="@+id/OfferAcceptDenyPage"

@@ -41,6 +41,7 @@ public class OfferLinkScannerPage extends Fragment {
 
         TextView destination = binding.offerLinkDestination;
         MaterialButton submitBtn = binding.offerLinkSubmit;
+        MaterialButton cancelBtn = binding.cancelOfferLinkSubmit;
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,8 +50,7 @@ public class OfferLinkScannerPage extends Fragment {
                     String carpoolID = generateCarpoolID();
                     Profile owner = new Profile("123456789", "John", "Smith", "admin@test.com", "01/01/2001", "1234567890");
                     List<Profile> members = new ArrayList<Profile>();
-                    String taxiID = "001";
-                    Boolean active = true;
+                    String taxiID = "T01";
                     String enteredDestination = destination.getText().toString();
                     int capacity = 4;
 
@@ -73,6 +73,14 @@ public class OfferLinkScannerPage extends Fragment {
                     Toast.makeText(OfferLinkScannerPage.this.getContext(),
                             "Destination cannot be empty.", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(OfferLinkScannerPage.this)
+                        .navigate(R.id.action_ScannedOfferLink_to_HomePage);
             }
         });
     }
