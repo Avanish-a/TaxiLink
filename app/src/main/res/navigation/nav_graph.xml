@@ -82,6 +82,9 @@
         <action
             android:id="@+id/action_HomePage_to_NearbyPage"
             app:destination="@id/NearbyPage" />
+        <action
+            android:id="@+id/action_HomePage_to_ProfilePage"
+            app:destination="@id/ProfilePage" />
     </fragment>
     <fragment
         android:id="@+id/OfferLink"
@@ -136,6 +139,9 @@
         <action
             android:id="@+id/action_ConfirmArrivalPage_to_DisplayFarePage"
             app:destination="@id/DisplayFarePage" />
+        <action
+            android:id="@+id/action_ConfirmArrivalPage_to_HomePage"
+            app:destination="@id/HomePage" />
     </fragment>
     <fragment
         android:id="@+id/NearbyPage"
@@ -147,9 +153,30 @@
             app:destination="@id/HomePage" />
     </fragment>
     <fragment
+        android:id="@+id/ProfilePage"
+        android:name="com.example.taxilink.TaxiSessionController.Profile"
+        android:label="@string/Profile"
+        tools:layout="@layout/profile_page">
+        <action
+            android:id="@+id/action_ProfilePage_to_HomePage"
+            app:destination="@id/HomePage" />
+        <action
+            android:id="@+id/action_ProfilePage_to_profileSettings"
+            app:destination="@id/profileSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileSettings"
+        android:name="com.example.taxilink.TaxiSessionController.ProfileSettings"
+        android:label="@string/profile_settings"
+        tools:layout="@layout/profile_settings">
+        <action
+            android:id="@+id/action_profileSettings_to_ProfilePage"
+            app:destination="@id/ProfilePage" />
+    </fragment>
+    <fragment 
         android:id="@+id/locationMessagePage"
         android:name="com.example.taxilink.Friendship.LocationMessage"
         android:label="FrienshipLocationBtn"
         tools:layout="@layout/activity_location_message">
-    </fragment>
+    </fragment>    
 </navigation>
