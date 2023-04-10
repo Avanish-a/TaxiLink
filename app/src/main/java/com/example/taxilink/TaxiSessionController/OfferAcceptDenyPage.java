@@ -1,6 +1,7 @@
 package com.example.taxilink.TaxiSessionController;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,16 @@ public class OfferAcceptDenyPage extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        new Handler().postDelayed(new Runnable(){
+            @Override
+            public void run() {
+                Toast.makeText(OfferAcceptDenyPage.this.getContext(),
+                        "Customer was rejected from Carpool", Toast.LENGTH_SHORT).show();
+                NavHostFragment.findNavController(OfferAcceptDenyPage.this)
+                        .navigate(R.id.action_OfferAcceptDenyPage_to_HomePage);
+            }
+        }, 300000);
 
         TextView customerName = binding.joiningCustomerName;
         TextView customerRating = binding.joiningCustomerRating;
