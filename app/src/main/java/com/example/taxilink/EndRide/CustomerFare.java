@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,16 +13,21 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.taxilink.R;
 import com.example.taxilink.databinding.DisplayFarePageBinding;
+import com.google.android.material.button.MaterialButton;
+
+import org.w3c.dom.Text;
 
 import java.util.Map;
 
 public class CustomerFare extends Fragment {
 
-    Double fare;
+    private double fare;
+    private double fareRate;
+    private double distance;
     Map<String, String> rideInformation;
 
-    private Double calculateFare(Map<String, String> rideInformation){
-        fare = 100.00;
+    private double calculateFare(double fareRate, double distance){
+        fare = fareRate * distance;
         return fare;
     }
     private DisplayFarePageBinding binding;
@@ -33,9 +39,18 @@ public class CustomerFare extends Fragment {
         binding = DisplayFarePageBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
+
     }
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        fareRate = 2.5;
+        distance = 10.5;
+
+        fare = calculateFare(fareRate, distance);
+
+        // change the text on the screen
+        TextView fare_text = binding.fareValue;
+        fare_text.setText(String.format("$%.2f",fare));
 
         binding.displayNext.setOnClickListener(new View.OnClickListener() {
             @Override
