@@ -2,7 +2,9 @@ package com.example.taxilink.TaxiSessionController;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +40,8 @@ public class QRScanner extends Fragment {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(activity, result.getText(), Toast.LENGTH_SHORT).show();
+                        Intent browse = new Intent( Intent.ACTION_VIEW , Uri.parse(result.getText()));
+                        startActivity(browse);
                     }
                 });
             }
