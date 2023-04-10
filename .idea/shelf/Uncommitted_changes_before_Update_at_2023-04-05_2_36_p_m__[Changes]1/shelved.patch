@@ -1,0 +1,94 @@
+Index: app/src/main/java/com/example/taxilink/Database/CustomerDB.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.taxilink.Database;\r\n\r\npublic class CustomerDB {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/taxilink/Database/CustomerDB.java b/app/src/main/java/com/example/taxilink/Database/CustomerDB.java
+--- a/app/src/main/java/com/example/taxilink/Database/CustomerDB.java	
++++ b/app/src/main/java/com/example/taxilink/Database/CustomerDB.java	
+@@ -1,4 +1,39 @@
+ package com.example.taxilink.Database;
+ 
++import com.example.taxilink.EncryptionController.DataEncryption;
++import com.example.taxilink.EncryptionController.RSAEncryption;
++
++import java.io.File;
++import java.util.ArrayList;
++
+ public class CustomerDB {
++    private DataEncryption encryption = new RSAEncryption();
++    private ArrayList<String> attributes = new ArrayList<String>();
++    private ArrayList<String> custIDs = new ArrayList<String>();
++    private File db;
++
++    public static void insert(String attrID, String custID) {
++
++    }
++
++    public static void delete(String attrID, String custID) {
++
++    }
++
++    public static void update(String attrID, String custID) {
++
++    }
++
++    public static ArrayList<String> acquire(String attrID, String custID) {
++        return new ArrayList<String>();
++    }
++
++    private void addAttr(String attrID) {
++
++    }
++
++    private void removeAttr(String attrID) {
++
++    }
++
+ }
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>*.iml\r\n.gradle\r\n/local.properties\r\n/.idea/caches\r\n/.idea/libraries\r\n/.idea/modules.xml\r\n/.idea/workspace.xml\r\n/.idea/navEditor.xml\r\n/.idea/assetWizardSettings.xml\r\n.DS_Store\r\n/build\r\n/captures\r\n.externalNativeBuild\r\n.cxx\r\nlocal.properties\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	
++++ b/.gitignore	
+@@ -12,4 +12,4 @@
+ /captures
+ .externalNativeBuild
+ .cxx
+-local.properties
++local.properties
+\ No newline at end of file
+Index: .idea/csv-plugin.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/csv-plugin.xml b/.idea/csv-plugin.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/csv-plugin.xml	
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CsvFileAttributes">
++    <option name="attributeMap">
++      <map>
++        <entry key="\app\src\main\java\com\example\taxilink\Database\CustomerDB.csv">
++          <value>
++            <Attribute>
++              <option name="separator" value="," />
++            </Attribute>
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++</project>
+\ No newline at end of file

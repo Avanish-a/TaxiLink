@@ -3,26 +3,147 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
-
+    app:startDestination="@id/LoginPage">
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.taxilink.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first" >
-
+        android:id="@+id/CreateAccountPage"
+        android:name="com.example.taxilink.AccountReg.CreateAccountPage"
+        android:label="@string/create_account_label"
+        tools:layout="@layout/create_account" >
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_CreateAccountPage_to_EmailVerificationPage"
+            app:destination="@id/EmailVerificationPage" />
+        <action
+            android:id="@+id/action_CreateAccountPage_to_LoginPage"
+            app:destination="@id/LoginPage" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.taxilink.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second" >
+        android:id="@+id/EmailVerificationPage"
+        android:name="com.example.taxilink.AccountReg.EmailVerificationPage"
+        android:label="@string/email_verification"
+        tools:layout="@layout/email_verif" >
+        <action
+            android:id="@+id/action_EmailVerificationPage_to_PolicyPage"
+            app:destination="@id/LegalPolicyPage" />
+        <action
+            android:id="@+id/action_EmailVerificationPage_to_CreateAccountPage"
+            app:destination="@id/CreateAccountPage" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/LegalPolicyPage"
+        android:name="com.example.taxilink.AccountReg.LegalPolicyPage"
+        android:label="@string/legal_policy_page"
+        tools:layout="@layout/legal_policy_page">
+        <action
+            android:id="@+id/action_LegalPolicyPage_to_PrivacyPolicyPage"
+            app:destination="@id/PrivacyPolicyPage" />
+        <action
+            android:id="@+id/action_LegalPolicyPage_to_EmailVerificationPage"
+            app:destination="@id/EmailVerificationPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/PrivacyPolicyPage"
+        android:name="com.example.taxilink.AccountReg.PrivacyPolicyPage"
+        android:label="@string/privacy_policy_page"
+        tools:layout="@layout/privacy_policy_page">
+        <action
+            android:id="@+id/action_PrivacyPolicyPage_to_HomePage"
+            app:destination="@id/HomePage" />
+        <action
+            android:id="@+id/action_PrivacyPolicyPage_to_LegalPolicyPage"
+            app:destination="@id/LegalPolicyPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/LoginPage"
+        android:name="com.example.taxilink.LoginController.LoginPage"        android:label="@string/login_header"
+        tools:layout="@layout/login_page">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_LoginPage_to_HomePage"
+            app:destination="@id/HomePage" />
+        <action
+            android:id="@+id/action_LoginPage_to_CreateAccountPage"
+            app:destination="@id/CreateAccountPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/HomePage"
+        android:name="com.example.taxilink.TaxiSessionController.HomePage"
+        android:label="@string/home_page"
+        tools:layout="@layout/home_page">
+        <action
+            android:id="@+id/action_HomePage_to_RequestLink"
+            app:destination="@id/RequestLink" />
+        <action
+            android:id="@+id/action_HomePage_to_OfferLink"
+            app:destination="@id/OfferLink" />
+        <action
+            android:id="@+id/action_HomePage_to_ConfirmArrivalPage"
+            app:destination="@id/ConfirmArrivalPage" />
+        <action
+            android:id="@+id/action_HomePage_to_NearbyPage"
+            app:destination="@id/NearbyPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/OfferLink"
+        android:name="com.example.taxilink.TaxiSessionController.OfferLinkPage"
+        android:label="@string/offer_link_main_header"
+        tools:layout="@layout/offer_link_page">
+        <action
+            android:id="@+id/action_OfferLink_to_HomePage"
+            app:destination="@id/HomePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/RequestLink"
+        android:name="com.example.taxilink.TaxiSessionController.RequestLinkPage"
+        android:label="@string/request_link_main_header"
+        tools:layout="@layout/request_link_page">
+        <action
+            android:id="@+id/action_RequestLink_to_HomePage"
+            app:destination="@id/HomePage" />
+        <action
+            android:id="@+id/action_RequestLink_to_RequestResultPage"
+            app:destination="@id/RequestResultPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/RequestResultPage"
+        android:name="com.example.taxilink.TaxiSessionController.RequestResultPage"
+        android:label="@string/request_result_header"
+        tools:layout="@layout/request_result_page">
+    </fragment>
+    <fragment
+        android:id="@+id/DisplayFarePage"
+        android:name="com.example.taxilink.EndRide.CustomerFare"
+        android:label="@string/Display_Fare"
+        tools:layout="@layout/display_fare_page">
+        <action
+            android:id="@+id/action_DisplayFarePage_to_RatingPage"
+            app:destination="@id/RatingPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/RatingPage"
+        android:name="com.example.taxilink.EndRide.CustomerRatingFormPage"
+        android:label="@string/Rating"
+        tools:layout="@layout/rating_page">
+        <action
+            android:id="@+id/action_RatingPage_to_HomePage"
+            app:destination="@id/HomePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/ConfirmArrivalPage"
+        android:name="com.example.taxilink.EndRide.ConfirmArrivalPage"
+        android:label="@string/confirm_arrival_button"
+        tools:layout="@layout/confirm_arrival">
+        <action
+            android:id="@+id/action_ConfirmArrivalPage_to_DisplayFarePage"
+            app:destination="@id/DisplayFarePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/NearbyPage"
+        android:name="com.example.taxilink.RideInformation.NearbyPage"
+        android:label="@string/Rating"
+        tools:layout="@layout/nearby_page">
+        <action
+            android:id="@+id/action_NearbyPage_to_HomePage"
+            app:destination="@id/HomePage" />
     </fragment>
 </navigation>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pageBackground">
+
+    <TextView
+        android:id="@+id/requestLinkHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/request_link_main_header"
+        android:textAlignment="center"
+        android:textColor="@color/buttonBackground"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/destinationHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/requestLinkHeader"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/request_link_taxi_dest_header"
+        android:textColor="@color/buttonBackground"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/requestDestinationInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/destinationHeader"
+        android:layout_marginHorizontal="10dp"
+        android:background="#30ffffff"
+        android:hint="@string/request_link_destination_hint"
+        android:padding="15dp"
+        android:textColorHint="@color/white" />
+
+    <TextView
+        android:id="@+id/pickupHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/requestDestinationInput"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/request_link_pickup_header"
+        android:textColor="@color/buttonBackground"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/requestPickupInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pickupHeader"
+        android:layout_marginHorizontal="10dp"
+        android:background="#30ffffff"
+        android:hint="@string/request_link_pickup_hint"
+        android:padding="15dp"
+        android:textColorHint="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/requestBtnLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="189dp"
+        android:layout_below="@id/requestPickupInput"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="134dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelRequestButton"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:backgroundTint="@color/buttonBackground"
+            android:text="@string/request_link_cancel_button" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submitRequestButton"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:backgroundTint="@color/buttonBackground"
+            android:text="@string/request_link_submit_button" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,13 +1,15 @@
 package com.example.taxilink.AppData;
 
 import com.example.taxilink.BaseEntity.Carpool;
+import com.example.taxilink.R;
+
+
 import java.util.HashMap;
 
 public class OfferInfo {
 
     private HashMap<String, Carpool> activePools;
     private HashMap<String, Carpool> inactivePools;
-
 
     public void addOffer(Carpool carpool, boolean status) {
         if (status) {
