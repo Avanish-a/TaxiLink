@@ -88,6 +88,18 @@
         <action
             android:id="@+id/action_OfferLink_to_HomePage"
             app:destination="@id/HomePage" />
+        <action
+            android:id="@+id/action_OfferLink_to_QR"
+            app:destination="@+id/QRScanner" />
+    </fragment>
+    <fragment
+        android:id="@+id/QRScanner"
+        android:name="com.example.taxilink.TaxiSessionController.QRScanner"
+        android:label="QR Scanner"
+        tools:layout="@layout/qr_scanner">
+        <action
+            android:id="@+id/action_QR_to_OfferLink"
+            app:destination="@+id/OfferLink" />
     </fragment>
     <fragment
         android:id="@+id/RequestLink"
