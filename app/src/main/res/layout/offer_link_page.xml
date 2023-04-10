@@ -48,7 +48,7 @@
         android:text="@string/offer_link_welcome"
         android:textAlignment="center"
         android:textColor="@color/buttonBackground"
-        android:textSize="20sp"
+        android:textSize="19sp"
         app:layout_constraintBottom_toTopOf="@+id/offer_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"

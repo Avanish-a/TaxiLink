@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "346688323304",
+    "project_id": "taxilink-717b3",
+    "storage_bucket": "taxilink-717b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346688323304:android:2b9633230a502e56a0935d",
+        "android_client_info": {
+          "package_name": "com.example.taxilink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346688323304-8p07bdmtbpa7eelgv1lnrnqfkapq64ca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLX1lmG6qn-gL0LBxodX1AEnGNylfKVfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346688323304-8p07bdmtbpa7eelgv1lnrnqfkapq64ca.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
