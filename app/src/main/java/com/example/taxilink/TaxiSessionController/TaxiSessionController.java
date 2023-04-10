@@ -2,8 +2,31 @@ package com.example.taxilink.TaxiSessionController;
 
 import com.example.taxilink.EncryptionController.RSAEncryption.RSA;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TaxiSessionController {
     private static RSA encryptionController = new RSA();
+
+    public static ArrayList<String> getRequestData(String requestID) {
+        ArrayList<String> customerData = new ArrayList<String>();
+
+        // hard coded request
+        double fareRate = 2.5;
+        double distance = 1;
+        double newFare = fareRate*distance;
+
+        customerData.add(requestID);
+        customerData.add("John Smith");
+        customerData.add("4/5");
+        customerData.add("West End Pub");
+        customerData.add(distance + " km");
+        customerData.add("5 minutes");
+        customerData.add("$" + newFare);
+
+
+        return customerData;
+    }
     protected static String encrypt(String data) {
         return encryptionController.encrypt(data);
     }

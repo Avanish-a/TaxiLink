@@ -118,6 +118,9 @@
         android:name="com.example.taxilink.TaxiSessionController.OfferAcceptDenyPage"
         android:label="Offer Accept Deny Page"
         tools:layout="@layout/request_accept_deny_page">
+        <action
+            android:id="@+id/action_OfferAcceptDenyPage_to_HomePage"
+            app:destination="@+id/HomePage"/>
     </fragment>
     <fragment
         android:id="@+id/RequestLink"
