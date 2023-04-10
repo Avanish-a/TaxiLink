@@ -176,4 +176,10 @@
             android:id="@+id/action_NearbyPage_to_HomePage"
             app:destination="@id/HomePage" />
     </fragment>
+    <fragment
+        android:id="@+id/locationMessagePage"
+        android:name="com.example.taxilink.Friendship.LocationMessage"
+        android:label="FrienshipLocationBtn"
+        tools:layout="@layout/activity_location_message">
+    </fragment>
 </navigation>
