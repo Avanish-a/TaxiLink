@@ -21,6 +21,8 @@ import com.google.android.material.button.MaterialButton;
 
 public class RequestLinkPage extends Fragment {
     private RequestLinkPageBinding binding;
+    public static String customerDestination;
+    public static String customerStart;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -48,11 +50,19 @@ public class RequestLinkPage extends Fragment {
                 // requestLinkController
                 String enteredDestination = destination.getText().toString();
                 String enteredPickup = start.getText().toString();
+
                 if (!enteredDestination.isEmpty() && !enteredPickup.isEmpty()) {
+                    String encryptedDestination = TaxiSessionController.encrypt(enteredDestination);
+                    String encryptedPickup = TaxiSessionController.encrypt(enteredDestination);
+                    TaxiSessionController.submitData();
+
+                    customerDestination = encryptedDestination;
+                    customerStart = encryptedPickup;
+
                     NavHostFragment.findNavController(RequestLinkPage.this)
                             .navigate(R.id.action_RequestLink_to_RequestResultPage);
                 } else {
-                    Toast.makeText(RequestLinkPage.this.getContext(), "Please fill in a Destination and pickup location" +
+                    Toast.makeText(RequestLinkPage.this.getContext(), "Destination or pickup location is empty." +
                             " Please try again.", Toast.LENGTH_SHORT).show();
                 }
             }

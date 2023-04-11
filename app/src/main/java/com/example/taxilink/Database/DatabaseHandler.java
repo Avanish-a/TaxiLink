@@ -106,31 +106,6 @@ public class DatabaseHandler {
         return records;
     }
 
-
-    public void readData(UserDataTest dataContainer) {
-        ArrayList<String> a = new ArrayList<String>();
-        db.collection("Users")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            ArrayList<String> userList = new ArrayList<>();
-
-                            for (DocumentSnapshot doc : task.getResult()) {
-                                a.add(doc.getId());
-                                User u = doc.toObject(User.class);
-                                assert u != null;
-                            }
-                            dataContainer.onCallback(userList);
-                        } else {
-                            Log.d(TAG, "Error getting documents: ", task.getException());
-                        }
-                    }
-
-                });
-    }
-
     public ArrayList<User> getUsers() {
         ArrayList<User> userRecords = new ArrayList<>();
         db.collection("Users").get().addOnCompleteListener(task -> {

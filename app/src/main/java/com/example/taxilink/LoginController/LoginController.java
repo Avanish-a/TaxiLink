@@ -9,11 +9,9 @@ public class LoginController {
         String pass = decrypt(passRSA);
         // temp conditional
         if (email.equals("admin") && pass.equals("password")) {
-            String customerID = "12345678";
+            String customerID = "12345678"; // will use actual customerID depending on DB
             return customerID;
         }
-        System.out.println(email);
-        System.out.println(pass);
         return null;
     }
 
