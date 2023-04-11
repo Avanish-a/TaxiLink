@@ -28,7 +28,7 @@ public class UpdateProfile extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        
+
         binding.UpdateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
