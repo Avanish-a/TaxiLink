@@ -45,7 +45,7 @@ public class HomePage extends Fragment {
                         .navigate(R.id.action_HomePage_to_RequestLink);
             }
         });
-        binding.ConfirmButton.setOnClickListener(new View.OnClickListener() {
+        binding.confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(com.example.taxilink.TaxiSessionController.HomePage.this)
@@ -65,6 +65,14 @@ public class HomePage extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(com.example.taxilink.TaxiSessionController.HomePage.this)
                         .navigate(R.id.action_HomePage_to_ProfilePage);
+            }
+        });
+
+        binding.direcBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(com.example.taxilink.TaxiSessionController.HomePage.this)
+                        .navigate(R.id.action_HomePage_to_mapsDirectionPage);
             }
         });
 

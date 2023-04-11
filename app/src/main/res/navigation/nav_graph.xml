@@ -85,6 +85,9 @@
         <action
             android:id="@+id/action_HomePage_to_ProfilePage"
             app:destination="@id/ProfilePage" />
+        <action
+            android:id="@+id/action_HomePage_to_mapsDirectionPage"
+            app:destination="@id/mapsDirectionPage" />
     </fragment>
     <fragment
         android:id="@+id/OfferLink"
@@ -183,5 +186,9 @@
         android:id="@+id/mapsDirectionPage"
         android:name="com.example.taxilink.MapsDirectionPage"
         android:label="maps_direction_page"
-        tools:layout="@layout/maps_direction_page" />
+        tools:layout="@layout/maps_direction_page" >
+        <action
+            android:id="@+id/action_mapsDirectionPage_to_HomePage"
+            app:destination="@id/HomePage" />
+    </fragment>
 </navigation>
