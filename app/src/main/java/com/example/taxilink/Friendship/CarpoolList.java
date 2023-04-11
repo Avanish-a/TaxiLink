@@ -12,11 +12,12 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.taxilink.R;
+import com.example.taxilink.databinding.CarpoolListBinding;
 import com.example.taxilink.databinding.CarpoolCustomerListBinding;
 
-public class CarpoolCustomerList extends Fragment {
+public class CarpoolList extends Fragment {
 
-    private CarpoolCustomerListBinding binding;
+    private CarpoolListBinding binding;
 
 
     @Override
@@ -24,7 +25,7 @@ public class CarpoolCustomerList extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        binding = CarpoolCustomerListBinding.inflate(inflater, container, false);
+        binding = CarpoolListBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -35,16 +36,16 @@ public class CarpoolCustomerList extends Fragment {
         binding.friendsListBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(com.example.taxilink.Friendship.CarpoolCustomerList.this)
-                        .navigate(R.id.action_CarpoolCustomerList_to_CarpoolList);
+                NavHostFragment.findNavController(com.example.taxilink.Friendship.CarpoolList.this)
+                        .navigate(R.id.action_CarpoolList_to_FriendsListPage);
             }
         });
-        RelativeLayout layout1 = (RelativeLayout) view.findViewById(R.id.relativeLayout2);
+        RelativeLayout layout1 = (RelativeLayout) view.findViewById(R.id.relativeLayout1);
         layout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavHostFragment.findNavController(com.example.taxilink.Friendship.CarpoolCustomerList.this)
-                        .navigate(R.id.action_CarpoolCustomerList_to_ProfileView);
+                NavHostFragment.findNavController(com.example.taxilink.Friendship.CarpoolList.this)
+                        .navigate(R.id.action_CarpoolList_to_CarpoolCustomerList);
             }
         });
     }
