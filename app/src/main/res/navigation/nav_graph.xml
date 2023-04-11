@@ -85,6 +85,9 @@
         <action
             android:id="@+id/action_HomePage_to_ProfilePage"
             app:destination="@id/ProfilePage" />
+        <action
+            android:id="@+id/action_HomePage_to_FriendsList"
+            app:destination="@id/FriendsListPage" />
     </fragment>
     <fragment
         android:id="@+id/OfferLink"
@@ -148,6 +151,9 @@
         android:name="com.example.taxilink.TaxiSessionController.RequestResultPage"
         android:label="@string/request_result_header"
         tools:layout="@layout/request_result_page">
+        <action
+            android:id="@+id/action_RequestResultPage_to_MapsDirectionPage"
+            app:destination="@+id/mapsDirectionPage"/>
     </fragment>
     <fragment
         android:id="@+id/DisplayFarePage"
@@ -199,6 +205,15 @@
         <action
             android:id="@+id/action_ProfilePage_to_profileSettings"
             app:destination="@id/profileSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/FriendsListPage"
+        android:name="com.example.taxilink.Friendship.FriendsListPage"
+        android:label="Friends List"
+        tools:layout="@layout/friends_list_page">
+        <action
+            android:id="@+id/action_FriendsList_to_HomePage"
+            app:destination="@+id/HomePage"/>
     </fragment>
     <fragment
         android:id="@+id/profileSettings"

@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.taxilink.BaseEntity.Request;
 import com.example.taxilink.R;
 import com.example.taxilink.RequestLinkController.RequestLinkController;
 import com.example.taxilink.databinding.RequestResultPageBinding;
@@ -78,7 +79,8 @@ public class RequestResultPage extends Fragment{
 
                 RequestLinkController.updateOffer("T01");
 
-                // redirect here to google maps page
+                NavHostFragment.findNavController(RequestResultPage.this)
+                        .navigate(R.id.action_RequestResultPage_to_MapsDirectionPage);
             }
         });
     }
