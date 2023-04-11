@@ -35,7 +35,9 @@
         android:layout_below="@+id/offerLinkTaxiID"
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="80dp"
-        android:paddingVertical="20sp"/>
+        android:paddingVertical="20sp"
+        android:background="#30ffffff"
+        android:padding="20dp"/>
 
     <LinearLayout
         android:id="@+id/scannedOfferBtnLayout"
@@ -54,7 +56,8 @@
             android:text="CANCEL"
             android:layout_below="@id/offerLinkDestination"
             android:layout_marginHorizontal="20dp"
-            android:backgroundTint="@color/buttonBackground"/>
+            android:backgroundTint="@color/buttonBackground"
+            android:textColor="@color/white"/>
 
 
         <com.google.android.material.button.MaterialButton
@@ -64,7 +67,8 @@
             android:text="SUBMIT"
             android:layout_marginHorizontal="20dp"
             android:layout_below="@id/offerLinkDestination"
-            android:backgroundTint="@color/buttonBackground"/>
+            android:backgroundTint="@color/buttonBackground"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
 

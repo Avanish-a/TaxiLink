@@ -15,7 +15,8 @@
         android:text="@string/PolicyAgree"
         app:backgroundTint="@color/buttonBackground"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/privacy_policy_cancel"
@@ -25,7 +26,8 @@
         android:text="@string/BackButton"
         app:backgroundTint="@color/buttonBackground"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"/>
 
     <ImageView
         android:id="@+id/imageView"
