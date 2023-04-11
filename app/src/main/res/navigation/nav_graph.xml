@@ -220,7 +220,7 @@
     </fragment>
     <fragment
         android:id="@+id/mapsDirectionPage"
-        android:name="com.example.taxilink.MapsDirectionPage"
+        android:name="com.example.taxilink.RideInformation.DirectionPage"
         android:label="maps_direction_page"
         tools:layout="@layout/maps_direction_page" >
         <action
