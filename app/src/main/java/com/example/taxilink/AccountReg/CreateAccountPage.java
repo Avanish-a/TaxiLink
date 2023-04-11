@@ -52,7 +52,7 @@ public class CreateAccountPage extends Fragment{
                 String enteredPassword = password.getText().toString();
                 String enteredDob = dob.getText().toString();
                 if (!enteredFirstName.isEmpty() && !enteredLastName.isEmpty()&& !enteredEmail.isEmpty()&& !enteredPassword.isEmpty()&& !enteredDob.isEmpty()){
-                    User newCustomer = new User(enteredFirstName, enteredLastName, enteredDob, enteredEmail, enteredPassword);
+                    User newCustomer = new User(enteredFirstName, enteredLastName, enteredDob, "", enteredEmail, enteredPassword);
 
                     // add to database;
 
