@@ -214,5 +214,10 @@
         android:name="com.example.taxilink.Friendship.LocationMessage"
         android:label="FrienshipLocationBtn"
         tools:layout="@layout/activity_location_message">
-    </fragment>    
+    </fragment>
+    <fragment
+        android:id="@+id/mapsDirectionPage"
+        android:name="com.example.taxilink.MapsDirectionPage"
+        android:label="maps_direction_page"
+        tools:layout="@layout/maps_direction_page" />
 </navigation>
