@@ -38,7 +38,6 @@ public class LoginPage extends Fragment {
         TextView password = binding.passwordField;
         MaterialButton loginBtn = binding.loginBtn;
         TextView createAccount = binding.createNewAcct;
-
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -12,9 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.taxilink.FirstFragment;
+import com.example.taxilink.BaseEntity.User;
 import com.example.taxilink.R;
-import com.example.taxilink.TaxiSessionController.RequestLinkPage;
 import com.example.taxilink.databinding.CreateAccountBinding;
 import com.google.android.material.button.MaterialButton;
 
@@ -35,7 +34,6 @@ public class CreateAccountPage extends Fragment{
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
         TextView firstName = binding.firstNameField;
         TextView lastName = binding.lastNameField;
         TextView email = binding.emailRegField;
@@ -54,6 +52,10 @@ public class CreateAccountPage extends Fragment{
                 String enteredPassword = password.getText().toString();
                 String enteredDob = dob.getText().toString();
                 if (!enteredFirstName.isEmpty() && !enteredLastName.isEmpty()&& !enteredEmail.isEmpty()&& !enteredPassword.isEmpty()&& !enteredDob.isEmpty()){
+                    User newCustomer = new User(enteredFirstName, enteredLastName, enteredDob, enteredEmail, enteredPassword);
+
+                    // add to database;
+
                     NavHostFragment.findNavController(CreateAccountPage.this)
                             .navigate(R.id.action_CreateAccountPage_to_EmailVerificationPage);
                 } else {
