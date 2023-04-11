@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -18,11 +19,15 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.maps.DirectionsApi;
 import com.google.maps.GeoApiContext;
 import com.google.maps.PendingResult;
+import com.google.maps.android.PolyUtil;
 import com.google.maps.model.DirectionsResult;
 import com.google.maps.model.TravelMode;
+
+import java.util.List;
 
 public class DirectionPage extends Fragment implements OnMapReadyCallback{
     private MapsDirectionPageBinding binding;
@@ -113,6 +118,7 @@ public class DirectionPage extends Fragment implements OnMapReadyCallback{
                             public void run(){
                                 mMap.addMarker(new MarkerOptions().position(new LatLng(startLat, startLog)).title(startLocation));
                                 mMap.addMarker(new MarkerOptions().position(new LatLng(endLat, endLog)).title(endLocation));
+                                drawPolyLines();
                                 System.out.println(" a failure has occurred");
                             }
 
@@ -137,5 +143,24 @@ public class DirectionPage extends Fragment implements OnMapReadyCallback{
             return latLng;
         }
     }
+
+    // method to draw the polylines
+    public void drawPolyLines(){
+        // Adding the blue polyline
+        String encodedPolyline = "s{_gGtv|fNODEWI_@q@w@Oy@?m@Pc@@YXm@hAiDLm@p@kDxAkNLiAN{CCaGMqQO}Na@_`@Co@DMAeB?WQA[DUFc@P{@j@s@h@u@f@o@TgANqALkAJ_@E}BJuBJcBHMGGKAq@r@C^H`@Ld@Bf@GC_DFsBCQEEKEs@DAyC";
+        List<LatLng> decodedPolyline = PolyUtil.decode(encodedPolyline);
+        PolylineOptions polylineOptions = new PolylineOptions();
+
+        for(LatLng point: decodedPolyline){
+            polylineOptions.add(point);
+        }
+
+        polylineOptions.width(10);
+        mMap.addPolyline(polylineOptions);
+
+
+    }
+
+
 
 }
