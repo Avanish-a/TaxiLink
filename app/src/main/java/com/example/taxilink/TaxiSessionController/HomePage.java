@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavHost;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.taxilink.R;
@@ -71,6 +72,13 @@ public class HomePage extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(com.example.taxilink.TaxiSessionController.HomePage.this)
                         .navigate(R.id.action_HomePage_to_mapsDirectionPage);
+            }
+            });
+        binding.Friends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(HomePage.this)
+                        .navigate(R.id.action_HomePage_to_FriendsList);
             }
         });
 

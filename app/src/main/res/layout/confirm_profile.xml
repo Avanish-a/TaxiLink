@@ -5,51 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pageBackground"
-    tools:context="AccountReg.EmailVerificationPage">
-
-    <Button
-        android:id="@+id/send_code"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/send_code_button"
-        app:backgroundTint="@color/buttonBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/white"/>
+    tools:context=".AccountReg.LegalPolicyPage">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/email_verification"
-        android:textColor="#070707"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/send_code"
+        android:layout_marginTop="216dp"
+        android:text="@string/would_you_like_to_delete_your_account"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/email_verif_next"
+        android:id="@+id/nobtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="@string/next"
+        android:layout_marginBottom="292dp"
+        android:text="@string/no"
         app:backgroundTint="@color/buttonBackground"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/yesbtn"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toStartOf="parent"
         android:textColor="@color/white"/>
 
     <Button
-        android:id="@+id/email_verif_back"
+        android:id="@+id/yesbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/BackButton"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="292dp"
+        android:text="@string/yes"
         app:backgroundTint="@color/buttonBackground"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:textColor="@color/white"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

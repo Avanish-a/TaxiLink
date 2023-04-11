@@ -20,7 +20,8 @@
         android:backgroundTint="@color/buttonBackground"
         android:minWidth="200dp"
         android:text="@string/request_link_home_page"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:textColor="@color/white"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/offerLinkBtn"
@@ -38,7 +39,8 @@
         android:backgroundTint="@color/buttonBackground"
         android:minWidth="200dp"
         android:text="@string/offer_link_home_page"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:textColor="@color/white"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/confirmButton"
@@ -51,7 +53,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="82dp"
         android:backgroundTint="@color/buttonBackground"
-        android:text="@string/confirm_arrival" />
+        android:text="@string/confirm_arrival"
+        android:textColor="@color/white"/>
 
     <LinearLayout
         android:id="@+id/bottomButtonsLayout"
@@ -68,7 +71,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:backgroundTint="@color/buttonBackground"
-            android:text="@string/nearby_locations" />
+            android:text="@string/nearby_locations"
+            android:textColor="@color/white"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/profile"
@@ -76,7 +80,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:backgroundTint="@color/buttonBackground"
-            android:text="@string/Profile" />
+            android:text="@string/Profile"
+            android:textColor="@color/white"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/Friends"
@@ -84,7 +89,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:backgroundTint="@color/buttonBackground"
-            android:text="@string/friends" />
+            android:text="@string/friends"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 

@@ -19,11 +19,11 @@
         android:textColor="@color/white"/>
 
     <Button
-        android:id="@+id/SubmitButton"
+        android:id="@+id/UpdateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:text="@string/account_reg_submit"
+        android:text="@string/update"
         app:backgroundTint="@color/buttonBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,14 +37,14 @@
         android:ems="10"
         android:hint="@string/email_field_header"
         android:inputType="textEmailAddress"
-        android:background="#30ffffff"
-        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lastNameField"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:background="#30ffffff"
+        android:padding="10dp"/>
 
     <EditText
         android:id="@+id/lastNameField"
@@ -85,7 +85,7 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginBottom="45dp"
-        android:text="@string/create_account_title"
+        android:text="@string/edit_your_account"
         android:textColor="#0B0A0A"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -123,7 +123,7 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailRegField"
-        android:background="#30ffffff"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:background="#30ffffff"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

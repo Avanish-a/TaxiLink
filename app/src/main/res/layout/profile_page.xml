@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/pageBackground">
 
     <ImageView
         android:id="@+id/profile_image"
@@ -149,7 +150,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="65dp"
         android:backgroundTint="@color/buttonBackground"
-        android:text="@string/BackButton" />
+        android:text="@string/BackButton"
+        android:textColor="@color/white"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/profileSettings"
@@ -162,5 +164,6 @@
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="65dp"
         android:backgroundTint="@color/buttonBackground"
-        android:text="@string/profile_settings" />
+        android:text="@string/profile_settings"
+        android:textColor="@color/white"/>
 </RelativeLayout>
