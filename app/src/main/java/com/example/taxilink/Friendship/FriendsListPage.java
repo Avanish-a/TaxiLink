@@ -44,7 +44,6 @@ public class FriendsListPage extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         MaterialButton backBtn = binding.friendsListBackBtn;
-        TextView friends = binding.friendsListText;
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,8 +52,6 @@ public class FriendsListPage extends Fragment {
                         .navigate(R.id.action_FriendsList_to_HomePage);
             }
         });
-
-        friends.setText("No friends yet.");
     }
     public void fetchFriends(View view) {
         mDocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
