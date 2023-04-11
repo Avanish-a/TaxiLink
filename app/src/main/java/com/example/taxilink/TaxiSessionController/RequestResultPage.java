@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ import com.example.taxilink.databinding.RequestResultPageBinding;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class RequestResultPage extends Fragment{
 
@@ -46,7 +48,6 @@ public class RequestResultPage extends Fragment{
         if (!availableCarpools.isEmpty()) {
             ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                     RequestResultPage.this.getContext(), android.R.layout.simple_list_item_1, availableCarpools);
-
             requestResults.setAdapter(arrayAdapter);
         }
         else {
@@ -58,6 +59,28 @@ public class RequestResultPage extends Fragment{
             Toast.makeText(RequestResultPage.this.getContext(),
                     "No matching carpools. A taxi will be called for you.", Toast.LENGTH_SHORT).show();
         }
+
+        requestResults.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(RequestResultPage.this.getContext(),
+                        "Request sent for " + availableCarpools.get(i), Toast.LENGTH_SHORT).show();
+
+                try {
+                    TimeUnit.SECONDS.sleep(8);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
+                Toast.makeText(RequestResultPage.this.getContext(),
+                        "Your Request for " + availableCarpools.get(i) +
+                                " has been accepted.", Toast.LENGTH_SHORT).show();
+
+                RequestLinkController.updateOffer("T01");
+
+                // redirect here to google maps page
+            }
+        });
     }
 }
 

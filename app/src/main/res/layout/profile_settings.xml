@@ -16,7 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/deleteprofilebtn"
@@ -29,7 +30,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editprofilebtn"
-        app:layout_constraintVertical_bias="0.299" />
+        app:layout_constraintVertical_bias="0.299"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/textView"

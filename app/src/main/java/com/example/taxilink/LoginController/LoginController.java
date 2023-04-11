@@ -7,9 +7,9 @@ public class LoginController {
     public static String login(String emailRSA, String passRSA) {
         String email = decrypt(emailRSA);
         String pass = decrypt(passRSA);
-        // temp conditional
-        if (email.equals("admin") && pass.equals("password")) {
-            String customerID = "12345678"; // will use actual customerID depending on DB
+        // ideally would've sent to a database
+        if (email.equals("admin@test.com") && pass.equals("password")) {
+            String customerID = email;
             return customerID;
         }
         return null;

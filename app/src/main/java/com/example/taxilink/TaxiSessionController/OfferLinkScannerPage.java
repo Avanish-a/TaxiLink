@@ -14,6 +14,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.taxilink.BaseEntity.Carpool;
 import com.example.taxilink.BaseEntity.Profile;
+import com.example.taxilink.OfferLinkController.OfferLinkController;
 import com.example.taxilink.R;
 import com.example.taxilink.databinding.OfferLinkScannerPageBinding;
 import com.google.android.material.button.MaterialButton;
@@ -47,15 +48,16 @@ public class OfferLinkScannerPage extends Fragment {
             @Override
             public void onClick(View v) {
                 if (!destination.getText().toString().isEmpty()) {
-                    String carpoolID = generateCarpoolID();
-                    Profile owner = new Profile("123456789", "John", "Smith", "admin@test.com", "01/01/2001", "1234567890");
-                    List<Profile> members = new ArrayList<Profile>();
+                    String owner = "John Smith";
                     String taxiID = "T01";
                     String enteredDestination = destination.getText().toString();
                     int capacity = 4;
 
-                    Carpool newOffer = new Carpool("John Smith", taxiID, enteredDestination, capacity);
-                    // send offer to database
+                    String encryptedOwner = TaxiSessionController.encrypt(owner);
+                    String encryptedTaxiID = TaxiSessionController.encrypt(taxiID);
+                    String encryptedDestination = TaxiSessionController.encrypt(enteredDestination);
+                    Carpool newOffer = new Carpool(encryptedOwner, encryptedTaxiID, encryptedDestination, capacity);
+                    OfferLinkController.createOffer(newOffer);
                     Toast.makeText(OfferLinkScannerPage.this.getContext(),
                             "Offer created successfully", Toast.LENGTH_SHORT).show();
 
