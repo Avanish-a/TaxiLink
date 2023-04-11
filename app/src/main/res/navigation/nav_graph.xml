@@ -94,6 +94,42 @@
         <action
             android:id="@+id/action_OfferLink_to_HomePage"
             app:destination="@id/HomePage" />
+        <action
+            android:id="@+id/action_OfferLink_to_QR"
+            app:destination="@+id/QRScanner" />
+    </fragment>
+    <fragment
+        android:id="@+id/QRScanner"
+        android:name="com.example.taxilink.TaxiSessionController.QRScanner"
+        android:label="QR Scanner"
+        tools:layout="@layout/qr_scanner">
+        <action
+            android:id="@+id/action_QR_to_OfferLink"
+            app:destination="@+id/OfferLink" />
+        <action
+            android:id="@+id/action_QR_to_ScannedOfferLink"
+            app:destination="@+id/ScannedQROfferPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/ScannedQROfferPage"
+        android:name="com.example.taxilink.TaxiSessionController.OfferLinkScannerPage"
+        android:label="Scanned Offer Link Page"
+        tools:layout="@layout/offer_link_scanner_page">
+        <action
+            android:id="@+id/action_ScannedOfferLink_to_OfferAcceptDeny"
+            app:destination="@+id/OfferAcceptDenyPage" />
+        <action
+            android:id="@+id/action_ScannedOfferLink_to_HomePage"
+            app:destination="@+id/HomePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/OfferAcceptDenyPage"
+        android:name="com.example.taxilink.TaxiSessionController.OfferAcceptDenyPage"
+        android:label="Offer Accept Deny Page"
+        tools:layout="@layout/request_accept_deny_page">
+        <action
+            android:id="@+id/action_OfferAcceptDenyPage_to_HomePage"
+            app:destination="@+id/HomePage"/>
     </fragment>
     <fragment
         android:id="@+id/RequestLink"
@@ -178,5 +214,10 @@
         android:name="com.example.taxilink.Friendship.LocationMessage"
         android:label="FrienshipLocationBtn"
         tools:layout="@layout/activity_location_message">
-    </fragment>    
+    </fragment>
+    <fragment
+        android:id="@+id/mapsDirectionPage"
+        android:name="com.example.taxilink.MapsDirectionPage"
+        android:label="maps_direction_page"
+        tools:layout="@layout/maps_direction_page" />
 </navigation>

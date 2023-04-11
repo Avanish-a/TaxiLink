@@ -1,8 +1,6 @@
 package com.example.taxilink.AppData;
 
 import com.example.taxilink.BaseEntity.Carpool;
-import com.example.taxilink.R;
-
 
 import java.util.HashMap;
 

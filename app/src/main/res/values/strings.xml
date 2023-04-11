@@ -80,7 +80,7 @@
     <!-- Strings used for Offer Link system -->
     <!-- Offer Link Main Page -->
     <string name="offer_link_main_header">Offer Link</string>
-    <string name="offer_link_welcome">Welcome to Offer Link! \n Start Offer by scanning the Taxi QR code:</string>
+    <string name="offer_link_welcome">Welcome to Offer Link! \n Start your Offer by scanning the Taxi QR code:</string>
     <string name="offer_link_scan_qr">Scan Taxi QR code</string>
     <string name="PolicyAgree">Agree</string>
     <string name="BackButton">Back</string>
