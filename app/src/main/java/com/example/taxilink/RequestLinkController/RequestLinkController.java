@@ -20,6 +20,10 @@ public class RequestLinkController {
 
         return availCarpools;
     }
+
+    public static void updateOffer(String carpoolID) {
+        // adds member to the arraylist of members
+    }
     protected static String encrypt(String data) {
         return encryptionController.encrypt(data);
     }
