@@ -211,6 +211,9 @@
         <action
             android:id="@+id/action_profileSettings_to_profileconfirmation"
             app:destination="@id/profileconfirmation" />
+        <action
+            android:id="@+id/action_profileSettings_to_UpdateProfile"
+            app:destination="@id/UpdateProfile" />
     </fragment>
     <fragment 
         android:id="@+id/locationMessagePage"
@@ -233,6 +236,19 @@
             app:destination="@id/LoginPage" />
         <action
             android:id="@+id/action_profileconfirmation_to_profileSettings"
+            app:destination="@id/profileSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/UpdateProfile"
+        android:name="com.example.taxilink.TaxiSessionController.UpdateProfile"
+        android:label="UpdateProfile"
+        tools:layout="@layout/edit_profile" >
+
+        <action
+            android:id="@+id/action_UpdateProfile_to_ProfilePage"
+            app:destination="@id/ProfilePage" />
+        <action
+            android:id="@+id/action_UpdateProfile_to_profileSettings"
             app:destination="@id/profileSettings" />
     </fragment>
 </navigation>

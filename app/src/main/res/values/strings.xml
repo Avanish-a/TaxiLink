@@ -97,5 +97,7 @@
     <string name="would_you_like_to_delete_your_account">Would you like to delete your account?</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
+    <string name="edit_your_account">Edit your account</string>
+    <string name="update">Update</string>
 
 </resources>
