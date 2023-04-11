@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pageBackground">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/offerLinkScannedHeader"
+        android:text="@string/offer_link_main_header"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="8dp"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonBackground"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/offerLinkTaxiID"
+        android:text="You are in Taxi #01"
+        android:textColor="@color/buttonBackground"
+        android:layout_below="@+id/offerLinkScannedHeader"
+        android:textSize="25sp"
+        android:layout_marginTop="100dp"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/offerLinkDestination"
+        android:hint="Destination"
+        android:layout_below="@+id/offerLinkTaxiID"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="80dp"
+        android:paddingVertical="20sp"
+        android:background="#30ffffff"
+        android:padding="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/scannedOfferBtnLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="189dp"
+        android:layout_below="@id/offerLinkDestination"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="134dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancelOfferLinkSubmit"
+            android:text="CANCEL"
+            android:layout_below="@id/offerLinkDestination"
+            android:layout_marginHorizontal="20dp"
+            android:backgroundTint="@color/buttonBackground"
+            android:textColor="@color/white"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/offerLinkSubmit"
+            android:text="SUBMIT"
+            android:layout_marginHorizontal="20dp"
+            android:layout_below="@id/offerLinkDestination"
+            android:backgroundTint="@color/buttonBackground"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

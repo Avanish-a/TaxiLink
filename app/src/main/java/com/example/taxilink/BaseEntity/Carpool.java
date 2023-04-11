@@ -3,81 +3,66 @@ package com.example.taxilink.BaseEntity;
 import java.util.ArrayList;
 
 public class Carpool {
-    private final String carpoolID;
-    private final Profile owner;
-    private final String taxiID;
-    private final String destination;
-    public final Integer capacity;
-    private ArrayList<Profile> members = new ArrayList<Profile>();
+    private String carpoolID;
+    private String owner;
+    private String taxiID;
+    private String destination;
+    public Integer capacity;
+    private final ArrayList<String> members = new ArrayList<>();
     private Boolean active;
 
-    public Carpool(String carpoolID, Profile owner, String taxiID, String destination, Integer capacity) {
+    public Carpool() {
+    }
+
+    public Carpool(String owner, String taxiID, String destination, Integer capacity) {
         if (capacity < 2) {
             throw new IllegalArgumentException("Capacity must be more than 1");
         }
-        this.carpoolID = carpoolID;
         this.owner = owner;
         this.taxiID = taxiID;
         this.destination = destination;
         this.members.add(owner);
-        this.active = true;
         this.capacity = capacity;
+        this.active = true;
     }
 
     public String getCarpoolID() {
-        return this.carpoolID;
+        return carpoolID;
     }
 
     public String getTaxiID() {
-        return this.taxiID;
+        return taxiID;
     }
 
-    public Profile getOwner() {
-        return this.owner;
+    public String getOwner() {
+        return owner;
     }
 
     public String getDestination() {
-        return this.destination;
+        return destination;
     }
 
     public Boolean isFull() {
-        return this.members.size() == this.capacity;
+        return members.size() == capacity;
     }
 
-    public ArrayList<Profile> members() {
-        return this.members;
+    public ArrayList<String> getMembers() {
+        return members;
     }
 
-    public void addMember(Profile newMember) {
+    public void addMember(String newMember) {
         if (this.members.size() < capacity) {
             this.members.add(newMember);
         }
     }
 
     public Boolean isActive() {
-        return this.active;
+        return active;
     }
 
     public void setStatus(Boolean status) {
         if (status) {
-            this.active = false;
+            active = false;
         }
     }
 }
-
-//- carpoolID : String
-//- owner : Profile
-//- members : ArrayList<Profile>
-//- taxiId : String
-//- active : Boolean
-//- destination : String
-//+ capacity : Integer
-//
-//+ getCarpoolID() : String
-//+ getTaxiID() : String
-//+ getOwner() : Profile
-//+ getDest() : String
-//+ isFull() : Boolean
-//+ members() : ArrayList<Profile>
-//+ addMember(member : Profile): void
-//+ isActive() : Boolean

@@ -17,25 +17,29 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginEnd="60dp"
+            android:backgroundTint="@color/buttonBackground"
             android:text="@string/accept_join_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/denyJoinRequestButton"
             app:layout_constraintTop_toBottomOf="@+id/fareChange"
-            app:layout_constraintVertical_bias="0.52" />
+            app:layout_constraintVertical_bias="0.52"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/denyJoinRequestButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
+            android:backgroundTint="@color/buttonBackground"
             android:text="@string/deny_join_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/acceptJoinRequestButton"
             app:layout_constraintHorizontal_bias="0.231"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fareChange"
-            app:layout_constraintVertical_bias="0.52" />
+            app:layout_constraintVertical_bias="0.52"
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/joiningCustomerRating"
@@ -47,7 +51,8 @@
             app:layout_constraintBottom_toTopOf="@+id/newJoinPickup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/joiningCustomerName" />
+            app:layout_constraintTop_toBottomOf="@+id/joiningCustomerName"
+            android:textAlignment="center"/>
 
         <TextView
             android:id="@+id/distanceAway"
@@ -59,7 +64,8 @@
             app:layout_constraintBottom_toTopOf="@+id/increasedTripTime"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/newJoinPickup" />
+            app:layout_constraintTop_toBottomOf="@+id/newJoinPickup"
+            android:textAlignment="center"/>
 
         <TextView
             android:id="@+id/fareChange"
@@ -72,7 +78,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAlignment="center"/>
 
         <TextView
             android:id="@+id/increasedTripTime"
@@ -86,7 +93,8 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/distanceAway"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"
+            android:textAlignment="center"/>
 
         <TextView
             android:id="@+id/newJoinPickup"
@@ -98,7 +106,8 @@
             app:layout_constraintBottom_toTopOf="@+id/distanceAway"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/joiningCustomerRating" />
+            app:layout_constraintTop_toBottomOf="@+id/joiningCustomerRating"
+            android:textAlignment="center"/>
 
         <TextView
             android:id="@+id/joiningCustomerName"
@@ -110,7 +119,8 @@
             app:layout_constraintBottom_toTopOf="@+id/joiningCustomerRating"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/newJoinRequestHeader" />
+            app:layout_constraintTop_toBottomOf="@+id/newJoinRequestHeader"
+            android:textAlignment="center"/>
 
         <TextView
             android:id="@+id/newJoinRequestHeader"

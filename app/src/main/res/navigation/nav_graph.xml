@@ -82,6 +82,12 @@
         <action
             android:id="@+id/action_HomePage_to_NearbyPage"
             app:destination="@id/NearbyPage" />
+        <action
+            android:id="@+id/action_HomePage_to_ProfilePage"
+            app:destination="@id/ProfilePage" />
+        <action
+            android:id="@+id/action_HomePage_to_FriendsList"
+            app:destination="@id/FriendsListPage" />
     </fragment>
     <fragment
         android:id="@+id/OfferLink"
@@ -91,6 +97,42 @@
         <action
             android:id="@+id/action_OfferLink_to_HomePage"
             app:destination="@id/HomePage" />
+        <action
+            android:id="@+id/action_OfferLink_to_QR"
+            app:destination="@+id/QRScanner" />
+    </fragment>
+    <fragment
+        android:id="@+id/QRScanner"
+        android:name="com.example.taxilink.TaxiSessionController.QRScanner"
+        android:label="QR Scanner"
+        tools:layout="@layout/qr_scanner">
+        <action
+            android:id="@+id/action_QR_to_OfferLink"
+            app:destination="@+id/OfferLink" />
+        <action
+            android:id="@+id/action_QR_to_ScannedOfferLink"
+            app:destination="@+id/ScannedQROfferPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/ScannedQROfferPage"
+        android:name="com.example.taxilink.TaxiSessionController.OfferLinkScannerPage"
+        android:label="Scanned Offer Link Page"
+        tools:layout="@layout/offer_link_scanner_page">
+        <action
+            android:id="@+id/action_ScannedOfferLink_to_OfferAcceptDeny"
+            app:destination="@+id/OfferAcceptDenyPage" />
+        <action
+            android:id="@+id/action_ScannedOfferLink_to_HomePage"
+            app:destination="@+id/HomePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/OfferAcceptDenyPage"
+        android:name="com.example.taxilink.TaxiSessionController.OfferAcceptDenyPage"
+        android:label="Offer Accept Deny Page"
+        tools:layout="@layout/request_accept_deny_page">
+        <action
+            android:id="@+id/action_OfferAcceptDenyPage_to_HomePage"
+            app:destination="@+id/HomePage"/>
     </fragment>
     <fragment
         android:id="@+id/RequestLink"
@@ -109,6 +151,9 @@
         android:name="com.example.taxilink.TaxiSessionController.RequestResultPage"
         android:label="@string/request_result_header"
         tools:layout="@layout/request_result_page">
+        <action
+            android:id="@+id/action_RequestResultPage_to_MapsDirectionPage"
+            app:destination="@+id/mapsDirectionPage"/>
     </fragment>
     <fragment
         android:id="@+id/DisplayFarePage"
@@ -136,6 +181,9 @@
         <action
             android:id="@+id/action_ConfirmArrivalPage_to_DisplayFarePage"
             app:destination="@id/DisplayFarePage" />
+        <action
+            android:id="@+id/action_ConfirmArrivalPage_to_HomePage"
+            app:destination="@id/HomePage" />
     </fragment>
     <fragment
         android:id="@+id/NearbyPage"
@@ -147,9 +195,75 @@
             app:destination="@id/HomePage" />
     </fragment>
     <fragment
+        android:id="@+id/ProfilePage"
+        android:name="com.example.taxilink.TaxiSessionController.Profile"
+        android:label="@string/Profile"
+        tools:layout="@layout/profile_page">
+        <action
+            android:id="@+id/action_ProfilePage_to_HomePage"
+            app:destination="@id/HomePage" />
+        <action
+            android:id="@+id/action_ProfilePage_to_profileSettings"
+            app:destination="@id/profileSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/FriendsListPage"
+        android:name="com.example.taxilink.Friendship.FriendsListPage"
+        android:label="Friends List"
+        tools:layout="@layout/friends_list_page">
+        <action
+            android:id="@+id/action_FriendsList_to_HomePage"
+            app:destination="@+id/HomePage"/>
+    </fragment>
+    <fragment
+        android:id="@+id/profileSettings"
+        android:name="com.example.taxilink.TaxiSessionController.ProfileSettings"
+        android:label="@string/profile_settings"
+        tools:layout="@layout/profile_settings">
+        <action
+            android:id="@+id/action_profileSettings_to_ProfilePage"
+            app:destination="@id/ProfilePage" />
+        <action
+            android:id="@+id/action_profileSettings_to_profileconfirmation"
+            app:destination="@id/profileconfirmation" />
+        <action
+            android:id="@+id/action_profileSettings_to_UpdateProfile"
+            app:destination="@id/UpdateProfile" />
+    </fragment>
+    <fragment 
         android:id="@+id/locationMessagePage"
         android:name="com.example.taxilink.Friendship.LocationMessage"
         android:label="FrienshipLocationBtn"
         tools:layout="@layout/activity_location_message">
+    </fragment>
+    <fragment
+        android:id="@+id/mapsDirectionPage"
+        android:name="com.example.taxilink.MapsDirectionPage"
+        android:label="maps_direction_page"
+        tools:layout="@layout/maps_direction_page" />
+    <fragment
+        android:id="@+id/profileconfirmation"
+        android:name="com.example.taxilink.TaxiSessionController.DeleteConfirmation"
+        android:label="profileconfirmation"
+        tools:layout="@layout/confirm_profile" >
+        <action
+            android:id="@+id/action_profileconfirmation_to_LoginPage"
+            app:destination="@id/LoginPage" />
+        <action
+            android:id="@+id/action_profileconfirmation_to_profileSettings"
+            app:destination="@id/profileSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/UpdateProfile"
+        android:name="com.example.taxilink.TaxiSessionController.UpdateProfile"
+        android:label="UpdateProfile"
+        tools:layout="@layout/edit_profile" >
+
+        <action
+            android:id="@+id/action_UpdateProfile_to_ProfilePage"
+            app:destination="@id/ProfilePage" />
+        <action
+            android:id="@+id/action_UpdateProfile_to_profileSettings"
+            app:destination="@id/profileSettings" />
     </fragment>
 </navigation>

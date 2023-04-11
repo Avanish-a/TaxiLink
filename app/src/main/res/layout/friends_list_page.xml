@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pageBackground">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/friendsListHeader"
+        android:text="Friends List"
+        android:textSize="35sp"
+        android:textAlignment="center"
+        android:layout_margin="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/friendsListText"
+        android:layout_below="@+id/friendsListHeader"
+        android:textSize="25dp"
+        android:layout_margin="10dp"
+        android:text=""/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/friendsListBackBtn"
+        android:text="Back"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/buttonBackground"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"/>
+
+</RelativeLayout>

@@ -3,18 +3,18 @@ package com.example.taxilink.TaxiSessionController;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavHost;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.taxilink.R;
 import com.example.taxilink.databinding.HomePageBinding;
-import com.google.android.material.button.MaterialButton;
 
 public class HomePage extends Fragment {
     private HomePageBinding binding;
@@ -59,5 +59,21 @@ public class HomePage extends Fragment {
                         .navigate(R.id.action_HomePage_to_NearbyPage);
             }
         });
+        binding.profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(com.example.taxilink.TaxiSessionController.HomePage.this)
+                        .navigate(R.id.action_HomePage_to_ProfilePage);
+            }
+        });
+
+        binding.Friends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(HomePage.this)
+                        .navigate(R.id.action_HomePage_to_FriendsList);
+            }
+        });
+
     }
 }
