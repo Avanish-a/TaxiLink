@@ -51,6 +51,13 @@ public class CreateAccountPage extends Fragment{
                 String enteredEmail = email.getText().toString();
                 String enteredPassword = password.getText().toString();
                 String enteredDob = dob.getText().toString();
+
+                String firstNameRSA = AccountRegController.encrypt(enteredFirstName);
+                String lastNameRSA = AccountRegController.encrypt(enteredLastName);
+                String emailRSA = AccountRegController.encrypt(enteredEmail);
+                String passwordRSA = AccountRegController.encrypt(enteredPassword);
+                String dobRSA = AccountRegController.encrypt(enteredDob);
+
                 if (!enteredFirstName.isEmpty() && !enteredLastName.isEmpty()&& !enteredEmail.isEmpty()&& !enteredPassword.isEmpty()&& !enteredDob.isEmpty()){
                     User newCustomer = new User(enteredFirstName, enteredLastName, enteredDob, "", enteredEmail, enteredPassword);
 
