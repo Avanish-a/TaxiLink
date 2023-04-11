@@ -24,10 +24,11 @@ public class CustomerFare extends Fragment {
     private double fare;
     private double fareRate;
     private double distance;
+    private double num_carpooler;
     Map<String, String> rideInformation;
 
-    private double calculateFare(double fareRate, double distance){
-        fare = fareRate * distance;
+    private double calculateFare(double fareRate, double distance, double num_carpooler){
+        fare = fareRate * distance - 1.00*num_carpooler;
         return fare;
     }
     private DisplayFarePageBinding binding;
@@ -44,9 +45,10 @@ public class CustomerFare extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         fareRate = 2.5;
-        distance = 10.5;
+        distance = 2.6;
+        num_carpooler = 1;
 
-        fare = calculateFare(fareRate, distance);
+        fare = calculateFare(fareRate, distance, num_carpooler);
 
         // change the text on the screen
         TextView fare_text = binding.fareValue;
