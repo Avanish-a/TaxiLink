@@ -54,7 +54,7 @@ public class OfferLinkScannerPage extends Fragment {
                     String enteredDestination = destination.getText().toString();
                     int capacity = 4;
 
-                    Carpool newOffer = new Carpool(carpoolID, owner, taxiID, enteredDestination, capacity);
+                    Carpool newOffer = new Carpool("John Smith", taxiID, enteredDestination, capacity);
                     // send offer to database
                     Toast.makeText(OfferLinkScannerPage.this.getContext(),
                             "Offer created successfully", Toast.LENGTH_SHORT).show();
