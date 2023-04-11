@@ -53,6 +53,13 @@ public class FriendsListPage extends Fragment {
                         .navigate(R.id.action_FriendsList_to_HomePage);
             }
         });
+        binding.previousCarpoolsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FriendsListPage.this)
+                        .navigate(R.id.action_FriendsListPage_to_CarpoolList);
+            }
+        });
 
         friends.setText("No friends yet.");
     }

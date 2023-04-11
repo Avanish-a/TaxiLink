@@ -153,4 +153,15 @@
         android:text="@string/BackButton"
         android:textColor="@color/white"/>
 
+    <Button
+        android:id="@+id/addfriend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="65dp"
+        android:backgroundTint="@color/buttonBackground"
+        android:text="Add Friend" />
+
 </RelativeLayout>

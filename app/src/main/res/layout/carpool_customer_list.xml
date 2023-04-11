@@ -15,8 +15,10 @@
         android:textSize="35sp" />
 
     <RelativeLayout
+        android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:clickable="true"
         android:layout_marginTop="16dp">
 
         <LinearLayout
@@ -61,9 +63,11 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        android:clickable="true">
 
         <LinearLayout
             android:layout_width="wrap_content"

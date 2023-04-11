@@ -214,6 +214,9 @@
         <action
             android:id="@+id/action_FriendsList_to_HomePage"
             app:destination="@+id/HomePage"/>
+        <action
+            android:id="@+id/action_FriendsListPage_to_CarpoolList"
+            app:destination="@id/CarpoolList" />
     </fragment>
     <fragment
         android:id="@+id/profileSettings"
@@ -265,5 +268,51 @@
         <action
             android:id="@+id/action_UpdateProfile_to_profileSettings"
             app:destination="@id/profileSettings" />
+
     </fragment>
+    <fragment
+        android:id="@+id/CarpoolCustomerList"
+        android:name="com.example.taxilink.Friendship.CarpoolCustomerList"
+        android:label="CarPoolCustomerList"
+        tools:layout="@layout/carpool_customer_list" >
+
+        <action
+            android:id="@+id/action_CarpoolCustomerList_to_CarpoolList"
+            app:destination="@id/CarpoolList" />
+        <action
+            android:id="@+id/action_CarpoolCustomerList_to_ProfileView"
+            app:destination="@id/ProfileView" />
+    </fragment>
+    <fragment
+        android:id="@+id/CarpoolList"
+        android:name="com.example.taxilink.Friendship.CarpoolList"
+        android:label="CarPoolList"
+        tools:layout="@layout/carpool_list">
+
+        <action
+            android:id="@+id/action_CarpoolList_to_CarpoolCustomerList"
+            app:destination="@id/CarpoolCustomerList" />
+        <action
+            android:id="@+id/action_CarpoolList_to_FriendsListPage"
+            app:destination="@id/FriendsListPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/ProfileView"
+        android:name="com.example.taxilink.Friendship.ProfileView"
+        android:label="ProfileView"
+        tools:layout="@layout/profile_page_view">
+        <action
+            android:id="@+id/action_ProfileView_to_CarpoolCustomerList"
+            app:destination="@id/CarpoolCustomerList" />
+        <action
+            android:id="@+id/action_ProfileView_to_FriendsListPage"
+            app:destination="@id/FriendsListPage" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_CarpoolList_to_CarpoolCustomerList"
+        app:destination="@id/CarpoolCustomerList" />
+    <action
+        android:id="@+id/action_CarpoolList_to_FriendsListPage"
+        app:destination="@id/FriendsListPage" />
 </navigation>
