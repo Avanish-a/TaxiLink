@@ -1,5 +1,11 @@
 package com.example.taxilink.RideInformation;
 
+import android.Manifest;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,9 +14,13 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.taxilink.MapsDirectionPage;
 import com.example.taxilink.R;
 import com.example.taxilink.databinding.MapsDirectionPageBinding;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -35,6 +45,8 @@ public class DirectionPage extends Fragment implements OnMapReadyCallback{
     private MapView mapView;
     private GeoApiContext geoApiContext;
 
+    NotificationManagerCompat notificationManagerCompat;
+    Notification notification;
 
 
 
@@ -77,6 +89,30 @@ public class DirectionPage extends Fragment implements OnMapReadyCallback{
         geoApiContext = new GeoApiContext.Builder()
                 .apiKey("AIzaSyC42oZdvHGae7r2JWS9jZ3mKA1FV37zSEU")
                 .build();
+
+        binding.locMessBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    NotificationChannel channel = new NotificationChannel("myCh", "my channel", NotificationManager.IMPORTANCE_HIGH);
+                    NotificationManager manager = (NotificationManager) getActivity().getSystemService(NotificationManager.class);
+                    manager.createNotificationChannel(channel);
+                }
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(DirectionPage.this.requireContext(), "myCh")
+                        .setSmallIcon(android.R.drawable.stat_notify_more)
+                        .setContentTitle("Heads Up!")
+                        .setContentText("Jeff Winger is on his way to McMaster University!");
+
+                Notification notification = builder.build();
+                notificationManagerCompat = NotificationManagerCompat.from(DirectionPage.this.requireContext());
+
+                if (ActivityCompat.checkSelfPermission(DirectionPage.this.requireContext(), Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                    return;
+                }
+                notificationManagerCompat.notify(1, notification);
+            }
+        });
 
     }
 
