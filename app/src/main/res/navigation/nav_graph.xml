@@ -86,6 +86,10 @@
             android:id="@+id/action_HomePage_to_ProfilePage"
             app:destination="@id/ProfilePage" />
         <action
+
+            android:id="@+id/action_HomePage_to_mapsDirectionPage"
+            app:destination="@id/mapsDirectionPage" />
+        <action
             android:id="@+id/action_HomePage_to_FriendsList"
             app:destination="@id/FriendsListPage" />
     </fragment>
@@ -238,9 +242,13 @@
     </fragment>
     <fragment
         android:id="@+id/mapsDirectionPage"
-        android:name="com.example.taxilink.MapsDirectionPage"
+        android:name="com.example.taxilink.RideInformation.DirectionPage"
         android:label="maps_direction_page"
-        tools:layout="@layout/maps_direction_page" />
+        tools:layout="@layout/maps_direction_page">
+        <action
+            android:id="@+id/action_mapsDirectionPage_to_HomePage"
+            app:destination="@id/HomePage" />
+    </fragment>
     <fragment
         android:id="@+id/profileconfirmation"
         android:name="com.example.taxilink.TaxiSessionController.DeleteConfirmation"

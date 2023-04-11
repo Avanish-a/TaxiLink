@@ -28,12 +28,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="196dp"
         android:text="@string/next"
+        android:textColor="@color/white"
         app:backgroundTint="@color/buttonBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.464"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/white"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RatingBar
         android:id="@+id/rating_bar"
@@ -50,12 +50,10 @@
         android:id="@+id/create_account_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="272dp"
-        android:text="@string/carpooler_name1"
+        android:text="Carpooler 1"
         app:layout_constraintBottom_toTopOf="@+id/rating_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.861" />
+        app:layout_constraintTop_toBottomOf="@+id/rating_phrase" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
