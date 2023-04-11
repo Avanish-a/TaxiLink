@@ -12,6 +12,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.taxilink.R;
 import com.example.taxilink.databinding.MapsDirectionPageBinding;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -50,6 +51,9 @@ public class DirectionPage extends Fragment implements OnMapReadyCallback{
     @Override
     public void onMapReady(GoogleMap googleMap){
         mMap = googleMap;
+        LatLng location = new LatLng(43.2622445, -79.9202861); // Centering location
+        float zoomLevel = 13.0f; // Zoom level between 2.0 (zoomed out) and 21.0 (zoomed in)
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, zoomLevel));
         getDirections();
     }
 
@@ -74,6 +78,7 @@ public class DirectionPage extends Fragment implements OnMapReadyCallback{
     private void getDirections(){
         String endLocation = "1280 Main Street West, Hamilton, ON";
         String startLocation = "University Plaza, Osler Drive, Dundas, ON";
+        String apiKey = "AIzaSyC42oZdvHGae7r2JWS9jZ3mKA1FV37zSEU";
 
         DirectionsApi.newRequest(geoApiContext)
                 .mode(TravelMode.DRIVING)
@@ -82,6 +87,7 @@ public class DirectionPage extends Fragment implements OnMapReadyCallback{
                 .setCallback(new PendingResult.Callback<DirectionsResult>() {
                     @Override
                     public void onResult(DirectionsResult result) {
+                        System.out.println("this is the results"+result);
                         if(result.routes.length > 0){
                             mMap.clear();
                             mMap.addMarker(new MarkerOptions().position(new LatLng(result.routes[0].legs[0].startLocation.lat, result.routes[0].legs[0].startLocation.lng)).title(result.routes[0].legs[0].startAddress));
@@ -92,9 +98,44 @@ public class DirectionPage extends Fragment implements OnMapReadyCallback{
 
                     @Override
                     public void onFailure(Throwable e) {
-                        System.out.println(" a failure has occurred");
+                        String startLatLng =  addressToLatLng(startLocation, apiKey);
+                        String endLatLng = addressToLatLng(endLocation,apiKey);
+                        System.out.println(startLatLng);
+                        System.out.println(endLatLng);
+
+                        double startLat = 43.2583338;
+                        double startLog = -79.9423619;
+                        double endLat = 43.2622445;
+                        double endLog = -79.9202861;
+
+                        getActivity().runOnUiThread(new Runnable(){
+                            @Override
+                            public void run(){
+                                mMap.addMarker(new MarkerOptions().position(new LatLng(startLat, startLog)).title(startLocation));
+                                mMap.addMarker(new MarkerOptions().position(new LatLng(endLat, endLog)).title(endLocation));
+                                System.out.println(" a failure has occurred");
+                            }
+
+                        });
+
                     }
                 });
+    }
+
+    private static String addressToLatLng(String address, String apiKey) {
+        String latLng = "";
+        try {
+            GeocodingTask task = new GeocodingTask();
+            latLng = task.execute(address, apiKey).get();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (latLng.isEmpty()) {
+            // Return default location
+            return "-33.8670522,151.1957362"; // Sydney, Australia (default)
+        } else {
+            return latLng;
+        }
     }
 
 }
