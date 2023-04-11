@@ -36,6 +36,13 @@ public class ProfileSettings extends Fragment {
                         .navigate(R.id.action_profileSettings_to_ProfilePage);
             }
         });
+        binding.deleteprofilebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(ProfileSettings.this)
+                        .navigate(R.id.action_profileSettings_to_profileconfirmation);
+            }
+        });
 
     }
 }

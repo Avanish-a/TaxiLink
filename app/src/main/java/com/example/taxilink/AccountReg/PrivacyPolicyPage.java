@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,6 +34,7 @@ public class PrivacyPolicyPage extends Fragment {
         binding.privacyPolicySubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(PrivacyPolicyPage.this.getContext(), "Account has been created", Toast.LENGTH_SHORT).show();
                 NavHostFragment.findNavController(PrivacyPolicyPage.this)
                         .navigate(R.id.action_PrivacyPolicyPage_to_HomePage);
             }
