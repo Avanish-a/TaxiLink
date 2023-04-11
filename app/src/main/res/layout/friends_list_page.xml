@@ -78,6 +78,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="23dp"
         android:backgroundTint="@color/buttonBackground"
-        android:text="Previous Carpools" />
+        android:text="Previous Carpools"
+        android:textColor="@color/white"/>
 
 </RelativeLayout>
