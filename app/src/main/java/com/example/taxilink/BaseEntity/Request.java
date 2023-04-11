@@ -2,16 +2,18 @@ package com.example.taxilink.BaseEntity;
 
 public class Request {
 
-    private final String reqID;
-    public final Carpool carpool;
-    private final Profile reqCustomer;
-    private final String destination;
-    private final String startLocation;
+    private String reqID;
+    public String carpoolID;
+    private String reqCustomer;
+    private String destination;
+    private String startLocation;
     private Boolean acceptance;
 
-    public Request(String reqID, Carpool carpool, Profile reqCustomer, String destination, String startLocation) {
-        this.reqID = reqID;
-        this.carpool = carpool;
+    public Request() {
+    }
+
+    public Request(String carpoolID, String reqCustomer, String destination, String startLocation) {
+        this.carpoolID = carpoolID;
         this.reqCustomer = reqCustomer;
         this.destination = destination;
         this.startLocation = startLocation;
@@ -19,44 +21,30 @@ public class Request {
     }
 
     public String getReqID() {
-        return this.reqID;
+        return reqID;
     }
 
     public String getCarpoolID() {
-        return this.carpool.getCarpoolID();
+        return carpoolID;
     }
 
-    public Profile getCustomer() {
-        return this.reqCustomer;
+    public String getCustomer() {
+        return reqCustomer;
     }
 
     public String getDestination() {
-        return this.destination;
+        return destination;
     }
 
     public String getStart() {
-        return this.startLocation;
+        return startLocation;
     }
 
     public void setAcceptance(Boolean accept) {
-        this.acceptance = accept;
+        acceptance = accept;
     }
 
     public Boolean isAccepted() {
-        return this.acceptance;
+        return acceptance;
     }
 }
-
-
-//+ reqID : String
-//- carpoolReq : Carpool
-//+ reqCustomer : Profile
-//- destination : String
-//- startLocation : String
-//- acceptance : Boolean
-//
-//+ getCarpoolID() : String
-//+ getCustomer() : Profile
-//+ getDest() : String
-//+ setAcceptance(accept : Boolean) : void
-//+ isAccepted() : Boolean
